@@ -46,32 +46,48 @@ public class SpaceShip : MonoBehaviour
         moveDistance = 2.5f;
         currentCell = gridSystem.GetCellAtPosition(transform.position);
         nextCell = gridSystem.GetNextCell(currentCell);
-        if (currentCell != null && nextCell != null && !currentCell.isEndCell && AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace))
-        {
-            isMoving = true;
 
-            if (currentCell.exitCellFace == Cell.CellFace.Up)
+        if (currentCell != null && nextCell != null && !currentCell.isEndCell)
+        {
+            if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
+                AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
             {
-                moveDirection = Vector3.up;
+                isMoving = true;
+
+                if (currentCell.exitCellFace == Cell.CellFace.Up)
+                {
+                    moveDirection = Vector3.up;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Down)
+                {
+                    moveDirection = Vector3.down;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Left)
+                {
+                    moveDirection = Vector3.left;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Right)
+                {
+                    moveDirection = Vector3.right;
+                }
+
+
+                if (AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
+                {
+                    nextCell.exitCellFace = nextCell.enterCellFace;
+                }
             }
-            else if (currentCell.exitCellFace == Cell.CellFace.Down)
+            else
             {
-                moveDirection = Vector3.down;
-            }
-            else if (currentCell.exitCellFace == Cell.CellFace.Left)
-            {
-                moveDirection = Vector3.left;
-            }
-            else if (currentCell.exitCellFace == Cell.CellFace.Right)
-            {
-                moveDirection = Vector3.right;
+                canMove = false;
             }
         }
-        else 
+        else
         {
             canMove = false;
         }
     }
+
 
     private bool AreDirectionsValid(Cell.CellFace exitFace, Cell.CellFace enterFace)
     {
