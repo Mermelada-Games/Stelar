@@ -692,7 +692,6 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074654618}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
       m_Calls:
       - m_Target: {fileID: 1074654616}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
