@@ -5,23 +5,34 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 public class AudioSystem : MonoBehaviour
 {
-    private Slider slider;
+    [SerializeField] private Slider fxSlider;
 
+    [SerializeField] private Slider musicSlider;
     private AudioSource  audioSource;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 1;
-        slider = GetComponent<Slider>();
-        slider.onValueChanged.AddListener(delegate { OnSliderValueChanged(); });
+        fxSlider.onValueChanged.AddListener(delegate { OnFxSliderValueChanged(); });
+        musicSlider.onValueChanged.AddListener(delegate { OnMusicSliderValueChanged(); });
     }
-    private void OnSliderValueChanged()
+    private void OnFxSliderValueChanged()
     {
-        SetVolume(slider.value);
+        SetFxVolume(fxSlider.value);
     }
-    private void SetVolume(float volume)
+
+    private void OnMusicSliderValueChanged()
     {
-        audioSource.volume = slider.value;
+      SetMusicVolume(musicSlider.value);
+    }
+
+    private void SetFxVolume(float volume)
+    {
+        audioSource.volume = fxSlider.value;
+    }
+
+      private void SetMusicVolume(float volume)
+    {
+        audioSource.volume = musicSlider.value;
     }
 }
-    
