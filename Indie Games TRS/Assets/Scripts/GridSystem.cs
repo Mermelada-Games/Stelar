@@ -18,6 +18,7 @@ public class GridSystem : MonoBehaviour
                 selectedCell = hit.collider.GetComponent<Cell>();
                 sortingOrder++;
                 selectedCell.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
+                GetNextCellFaces(selectedCell);
             }
         }
 
@@ -39,7 +40,7 @@ public class GridSystem : MonoBehaviour
             }
             else
             {
-                selectedCell.ResetPosition();
+                selectedCell.ResetCellPosition();
             }
             selectedCell = null;
         }
@@ -47,16 +48,51 @@ public class GridSystem : MonoBehaviour
 
     private void TrySwapCells(Cell cell1, Cell cell2)
     {
-        Collider2D collider1 = cell1.GetComponent<Collider2D>();
-        Collider2D collider2 = cell2.GetComponent<Collider2D>();
-            Vector3 tempPosition = cell1.InitialPosition;
-            cell1.transform.position = cell2.InitialPosition;
-            cell2.transform.position = tempPosition;
-            cell1.ResetInitialPosition();
-            cell2.ResetInitialPosition();
+        Vector3 tempPosition = cell1.CellPosition;
+        cell1.transform.position = cell2.CellPosition;
+        cell2.transform.position = tempPosition;
+        cell1.ResetCellPosition();
+        cell2.ResetCellPosition();
+    }
 
-            Debug.Log("Celdas intercambiadas.");
+    public void ResetGrid()
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            cell.ResetInitialPosition();
+        }
+    }
 
+    private void GetNextCellFaces(Cell currentCell)
+    {
+        Cell.CellFace exitface = currentCell.exitCellFace;
+
+        Vector3 exitfacePosition = currentCell.transform.position;
+
+        switch (exitface)
+        {
+            case Cell.CellFace.Up:
+                exitfacePosition += Vector3.up * 2.0f;
+                break;
+            case Cell.CellFace.Down:
+                exitfacePosition += Vector3.down * 2.0f;
+                break;
+            case Cell.CellFace.Left:
+                exitfacePosition += Vector3.left * 2.0f;
+                break;
+            case Cell.CellFace.Right:
+                exitfacePosition += Vector3.right * 2.0f;
+                break;
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(exitfacePosition, Vector2.zero);
+        if (hit.collider != null && hit.collider.CompareTag("Cell"))
+        {
+            Cell nextCell = hit.collider.GetComponent<Cell>();
+            Debug.Log("Enter face: " + nextCell.enterCellFace);
+            Debug.Log("Exit face: " + nextCell.exitCellFace);
+        }
     }
 
 }
