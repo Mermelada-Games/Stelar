@@ -9,6 +9,7 @@ public class SpaceShip : MonoBehaviour
     private Vector3 initialPosition;
 
     private GridSystem gridSystem;
+    private Level level;
     private Cell currentCell;
     private Cell nextCell;
     private Vector3 moveDirection = Vector3.zero;
@@ -17,7 +18,9 @@ public class SpaceShip : MonoBehaviour
 
     private void Start()
     {
+        level = FindObjectOfType<Level>();
         gridSystem = FindObjectOfType<GridSystem>();
+        currentCell = gridSystem.GetCellAtPosition(transform.position);
     }
 
     void Update()
@@ -37,6 +40,11 @@ public class SpaceShip : MonoBehaviour
         else
         {
             if (canMove) Move();
+        }
+
+        if (currentCell.isEndCell)
+        {
+            level.endCell = true;
         }
     }
 

@@ -9,8 +9,8 @@ public class Star : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Level level = FindObjectOfType<Level>();
-            level.score++;
-            Debug.Log("Score: " + level.score);
+            level.starsCount++;
+            Debug.Log("Score: " + level.starsCount);
             Destroy(gameObject);
         }
     }

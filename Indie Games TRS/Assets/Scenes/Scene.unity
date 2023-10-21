@@ -8181,7 +8181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37060e021fd43f547894dd08ea27b058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  stars:
+  - {fileID: 1396728164}
+  - {fileID: 1056389732}
+  - {fileID: 1497901868}
+  starsCount: 0
 --- !u!4 &1899003594
 Transform:
   m_ObjectHideFlags: 0
