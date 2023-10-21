@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
-    private float moveDistance = 2.5f;
-    private float moveSpeed = 2.0f;
+    [SerializeField] private float moveSpeed = 2.5f;
+    [SerializeField] private float moveDistance = 2.5f;
     private Vector3 initialPosition;
 
     private GridSystem gridSystem;
@@ -45,7 +45,7 @@ public class SpaceShip : MonoBehaviour
         moveDistance = 2.5f;
         currentCell = gridSystem.GetCellAtPosition(transform.position);
         nextCell = gridSystem.GetNextCell(currentCell);
-        if (currentCell != null && !currentCell.isEndCell && AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace))
+        if (currentCell != null && nextCell != null && !currentCell.isEndCell && AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace))
         {
             isMoving = true;
 
@@ -90,5 +90,4 @@ public class SpaceShip : MonoBehaviour
         canMove = true;
         gridSystem.StartGame();
     }
-
 }
