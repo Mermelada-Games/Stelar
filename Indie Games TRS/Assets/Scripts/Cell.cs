@@ -20,6 +20,7 @@ public class Cell : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 cellPosition;
     private bool isDragging = false;
+    public bool canDrag = true;
 
     private void Start()
     {
@@ -38,12 +39,16 @@ public class Cell : MonoBehaviour
 
     private void OnMouseDown()
     {
-        isDragging = true;
-
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        Color color = spriteRenderer.color;
-        color.a = 0.5f;
-        spriteRenderer.color = color;
+        if (canDrag)
+        {
+            isDragging = true;
+            cellPosition = transform.position;
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            Color color = spriteRenderer.color;
+            color.a = 0.5f;
+            spriteRenderer.color = color;
+        }
+        
     }
 
     private void OnMouseUp()

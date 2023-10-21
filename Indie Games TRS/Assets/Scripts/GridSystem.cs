@@ -7,43 +7,48 @@ public class GridSystem : MonoBehaviour
 {
     private Cell selectedCell;
     private int sortingOrder = 0;
+    private bool isGameStarted = false;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isGameStarted)
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null && hit.collider.CompareTag("Cell"))
+            if (Input.GetMouseButtonDown(0))
             {
-                selectedCell = hit.collider.GetComponent<Cell>();
-                sortingOrder++;
-                selectedCell.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-                GetNextCellFaces(selectedCell);
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0) && selectedCell != null)
-        {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(selectedCell.transform.position, 0.1f);
-
-            if (colliders.Length > 1)
-            {
-                foreach (Collider2D collider in colliders)
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null && hit.collider.CompareTag("Cell"))
                 {
-                    if (collider.CompareTag("Cell") && collider != selectedCell.GetComponent<Collider2D>())
-                    {
-                        Cell otherCell = collider.GetComponent<Cell>();
-                        TrySwapCells(selectedCell, otherCell);
-                        break;
-                    }
+                    selectedCell = hit.collider.GetComponent<Cell>();
+                    sortingOrder++;
+                    selectedCell.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
                 }
             }
-            else
+
+            if (Input.GetMouseButtonUp(0) && selectedCell != null)
             {
-                selectedCell.ResetCellPosition();
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(selectedCell.transform.position, 0.1f);
+
+                if (colliders.Length > 1)
+                {
+                    foreach (Collider2D collider in colliders)
+                    {
+                        if (collider.CompareTag("Cell") && collider != selectedCell.GetComponent<Collider2D>())
+                        {
+                            Cell otherCell = collider.GetComponent<Cell>();
+                            TrySwapCells(selectedCell, otherCell);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    selectedCell.transform.position = selectedCell.CellPosition;
+                    selectedCell.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                }
+                selectedCell = null;
             }
-            selectedCell = null;
         }
+        
     }
 
     private void TrySwapCells(Cell cell1, Cell cell2)
@@ -64,7 +69,21 @@ public class GridSystem : MonoBehaviour
         }
     }
 
-    private void GetNextCellFaces(Cell currentCell)
+    public Cell GetCellAtPosition(Vector3 position)
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            float cellSize = 2.0f;
+            if (Vector3.Distance(cell.transform.position, position) < cellSize / 2)
+            {
+                return cell;
+            }
+        }
+        return null;
+    }
+
+    public Cell GetNextCell(Cell currentCell)
     {
         Cell.CellFace exitface = currentCell.exitCellFace;
 
@@ -90,9 +109,24 @@ public class GridSystem : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Cell"))
         {
             Cell nextCell = hit.collider.GetComponent<Cell>();
-            Debug.Log("Enter face: " + nextCell.enterCellFace);
-            Debug.Log("Exit face: " + nextCell.exitCellFace);
+            return nextCell;
         }
+        return null;
+    }
+
+    public void StartGame()
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            Collider2D collider = GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+            cell.canDrag = false;
+        }
+        isGameStarted = true;
     }
 
 }
