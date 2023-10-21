@@ -27,6 +27,7 @@ public class SpaceShip : MonoBehaviour
             if (Vector3.Distance(transform.position, initialPosition) < moveDistance)
             {
                 transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+                RotateDirection(moveDirection);
             }
             else
             {
@@ -83,6 +84,32 @@ public class SpaceShip : MonoBehaviour
         };
 
         return validPairs.ContainsKey(exitFace) && validPairs[exitFace] == enterFace;
+    }
+
+    private void RotateDirection(Vector3 direction)
+    {
+        float angle = 0f;
+        if (direction == Vector3.up)
+        {
+            angle = 90f;
+        }
+        else if (direction == Vector3.down)
+        {
+            angle = -90f;
+        }
+        else if (direction == Vector3.left)
+        {
+            angle = 180f;
+        }
+        else if (direction == Vector3.right)
+        {
+            angle = 0f;
+        }
+
+        foreach (Transform child in transform)
+        {
+            child.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     public void startMovement()
