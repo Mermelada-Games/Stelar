@@ -43,7 +43,6 @@ public class GridSystem : MonoBehaviour
                 else
                 {
                     selectedCell.transform.position = selectedCell.CellPosition;
-                    selectedCell.GetComponent<SpriteRenderer>().sortingOrder = 0;
                 }
                 selectedCell = null;
             }
@@ -119,12 +118,13 @@ public class GridSystem : MonoBehaviour
         Cell[] cells = FindObjectsOfType<Cell>();
         foreach (Cell cell in cells)
         {
-            Collider2D collider = GetComponent<Collider2D>();
+            Collider2D collider = cell.GetComponent<Collider2D>();
             if (collider != null)
             {
-                collider.enabled = false;
+                collider.enabled = true;
             }
             cell.canDrag = false;
+            cell.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         isGameStarted = true;
     }
