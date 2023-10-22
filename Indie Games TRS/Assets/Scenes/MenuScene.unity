@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 814452347}
-  fxSource: {fileID: 0}
+  fxSource: {fileID: 814452347}
 --- !u!4 &814452346
 Transform:
   m_ObjectHideFlags: 0
