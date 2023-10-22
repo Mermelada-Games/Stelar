@@ -5,14 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 public class AudioSystem : MonoBehaviour
 {
-    [SerializeField] private Slider fxSlider;
-
-    [SerializeField] private Slider musicSlider;
-    private AudioSource  audioSource;
+    private Slider fxSlider;
+    private Slider musicSlider;
+    private SoundManager soundManager;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 1;
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();    
+        AudioSource musicSource = soundManager.GetMusicSource();
+        AudioSource fxSource = soundManager.GetFxSource();
+        fxSlider = GameObject.FindGameObjectWithTag("FxSlider").GetComponent<Slider>();
+        musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
         fxSlider.onValueChanged.AddListener(delegate { OnFxSliderValueChanged(); });
         musicSlider.onValueChanged.AddListener(delegate { OnMusicSliderValueChanged(); });
     }
@@ -20,19 +22,16 @@ public class AudioSystem : MonoBehaviour
     {
         SetFxVolume(fxSlider.value);
     }
-
     private void OnMusicSliderValueChanged()
     {
       SetMusicVolume(musicSlider.value);
     }
-
     private void SetFxVolume(float volume)
     {
-        audioSource.volume = fxSlider.value;
+      soundManager.GetFxSource().volume = fxSlider.value;
     }
-
       private void SetMusicVolume(float volume)
     {
-        audioSource.volume = musicSlider.value;
+        soundManager.GetMusicSource().volume = musicSlider.value;
     }
 }
