@@ -7,6 +7,8 @@ public class SpaceShip : MonoBehaviour
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float moveDistance = 2.5f;
     [SerializeField] private float rotationSpeed = 90.0f;
+    [SerializeField] private int maxMovements;
+    
     private Vector3 initialPosition;
 
     private GridSystem gridSystem;
@@ -22,6 +24,7 @@ public class SpaceShip : MonoBehaviour
         level = FindObjectOfType<Level>();
         gridSystem = FindObjectOfType<GridSystem>();
         currentCell = gridSystem.GetCellAtPosition(transform.position);
+        Debug.Log(maxMovements);
     }
 
     void Update()
@@ -56,7 +59,7 @@ public class SpaceShip : MonoBehaviour
         currentCell = gridSystem.GetCellAtPosition(transform.position);
         nextCell = gridSystem.GetNextCell(currentCell);
 
-        if (currentCell != null && nextCell != null && !currentCell.isEndCell)
+        if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
         {
             if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
                 AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
@@ -85,6 +88,9 @@ public class SpaceShip : MonoBehaviour
                 {
                     nextCell.exitCellFace = nextCell.enterCellFace;
                 }
+
+                maxMovements--;
+                Debug.Log(maxMovements);
             }
             else
             {

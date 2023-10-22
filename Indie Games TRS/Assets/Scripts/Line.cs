@@ -1,13 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Line : MonoBehaviour
 {
     [SerializeField] private float animationDuration = 3f;
+    [SerializeField] private float minIntensity = 1f;
+    [SerializeField] private float maxIntensity = 3f;
+    [SerializeField] private float blinkSpeed = 2f;
 
+    public UnityEngine.Rendering.Universal.Light2D light2D;
     private LineRenderer lineRenderer;
     private Vector3[] linePoints;
     private int pointsCount;
+    
 
     private void Start()
     {
@@ -17,6 +23,9 @@ public class Line : MonoBehaviour
         pointsCount = lineRenderer.positionCount;
         linePoints = new Vector3[pointsCount];
         lineRenderer.GetPositions(linePoints);
+
+        light2D = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
+        light2D.intensity = 1;
     }
 
     public IEnumerator LineAnimation()
@@ -44,6 +53,18 @@ public class Line : MonoBehaviour
             }
 
             lineRenderer.SetPosition(i + 1, endPosition);
+        }
+
+        float timeElapsed = 0f;
+
+        while (timeElapsed < animationDuration)
+        {
+            float blinkValue = Mathf.Sin(blinkSpeed * timeElapsed);
+            float intensity = Mathf.Lerp(minIntensity, maxIntensity, (blinkValue + 1) / 2);
+            light2D.intensity = intensity;
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
     }
 }
