@@ -6,6 +6,7 @@ public class SpaceShip : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float moveDistance = 2.5f;
+    [SerializeField] private float rotationSpeed = 90.0f;
     private Vector3 initialPosition;
 
     private GridSystem gridSystem;
@@ -111,30 +112,32 @@ public class SpaceShip : MonoBehaviour
     }
 
     private void RotateDirection(Vector3 direction)
-    {
-        float angle = 0f;
-        if (direction == Vector3.up)
-        {
-            angle = 90f;
-        }
-        else if (direction == Vector3.down)
-        {
-            angle = -90f;
-        }
-        else if (direction == Vector3.left)
-        {
-            angle = 180f;
-        }
-        else if (direction == Vector3.right)
-        {
-            angle = 0f;
-        }
+{
+    Vector3 targetEulerAngles = Vector3.zero;
 
-        foreach (Transform child in transform)
-        {
-            child.rotation = Quaternion.Euler(0, 0, angle);
-        }
+    if (direction == Vector3.up)
+    {
+        targetEulerAngles = new Vector3(0, 0, 90);
     }
+    else if (direction == Vector3.down)
+    {
+        targetEulerAngles = new Vector3(0, 0, -90);
+    }
+    else if (direction == Vector3.left)
+    {
+        targetEulerAngles = new Vector3(0, 0, 180);
+    }
+    else if (direction == Vector3.right)
+    {
+        targetEulerAngles = Vector3.zero;
+    }
+
+    Quaternion targetRotation = Quaternion.Euler(targetEulerAngles);
+    foreach (Transform child in transform)
+    {
+        child.rotation = Quaternion.RotateTowards(child.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+}
 
     public void startMovement()
     {
