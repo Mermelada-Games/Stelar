@@ -9,6 +9,7 @@ TagManager:
   - FxSlider
   - MusicSlider
   - SoundManager
+  - Constellation
   layers:
   - Default
   - TransparentFX

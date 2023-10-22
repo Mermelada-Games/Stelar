@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
     [SerializeField] private GameObject[] stars;
-    [SerializeField] private UIStar[] uiStars;
     [SerializeField] private float changeLevelDelay =  5f;
     public int starsCount = 0;
     private bool starsCollected = false;
@@ -42,13 +41,5 @@ public class Level : MonoBehaviour
         yield return new WaitForSeconds(changeLevelDelay);
 
         SceneManager.LoadScene("SelectLevelScene");
-    }
-
-    public void CollectStar(int starIndex)
-    {
-        if (starIndex >= 0 && starIndex < uiStars.Length)
-        {
-            uiStars[starIndex].CollectStar();
-        }
     }
 }

@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
     private float currentSize;
     private float targetSize;
 
+    public bool startLevel = false;
+    private bool levelStarted = false;
+
     private void Start()
     {
         currentSize = virtualCamera.m_Lens.OrthographicSize;
@@ -22,8 +25,9 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (startLevel && !levelStarted)
         {
+            levelStarted = true;
             targetSize = zoomInSize;
         }
         else if (Input.GetKeyDown(KeyCode.Z))

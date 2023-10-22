@@ -18,7 +18,6 @@ public class Star : MonoBehaviour
         {
             Level level = FindObjectOfType<Level>();
             level.starsCount++;
-            level.CollectStar(level.starsCount - 1);
             EnableLight();
         }
     }
