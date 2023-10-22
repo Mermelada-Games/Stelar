@@ -30,7 +30,7 @@ public class Level : MonoBehaviour
 
     private void ChangeLevelWithDelay()
     {
-        PlayerPrefs.SetInt("levelReached", 2);
+        PlayerPrefs.SetInt("levelReached", 1);
         PlayerPrefs.Save();
         StartCoroutine(lineScript.LineAnimation());
         StartCoroutine(ChangeLevelAfterDelay());
@@ -40,6 +40,6 @@ public class Level : MonoBehaviour
     {
         yield return new WaitForSeconds(changeLevelDelay);
 
-        SceneManager.LoadScene("SelectLevelScene");
+        SceneManager.LoadScene("Galaxy");
     }
 }

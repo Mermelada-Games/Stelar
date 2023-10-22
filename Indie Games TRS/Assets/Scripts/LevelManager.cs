@@ -5,35 +5,35 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] Button[] levelButtons;
+    [SerializeField] GameObject[] constellationLine;
     private int levelReached;
 
     private void Start()
     {
-        levelReached = PlayerPrefs.GetInt("levelReached", 1);
+        levelReached = PlayerPrefs.GetInt("levelReached", 0);
 
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 0; i < constellationLine.Length; i++)
         {
             if (i + 1 > levelReached)
             {
-                levelButtons[i].interactable = false;
+                constellationLine[i].SetActive(false);
             }
             else
             {
-                levelButtons[i].interactable = true;
+                constellationLine[i].SetActive(true);
             }
         }
     }
 
     public void RestartProgress()
     {
-        PlayerPrefs.SetInt("levelReached", 1);
+        PlayerPrefs.SetInt("levelReached", 0);
         PlayerPrefs.Save();
 
         levelReached = 1;
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 0; i < constellationLine.Length; i++)
         {
-            levelButtons[i].interactable = (i + 1 <= levelReached);
+            constellationLine[i].SetActive(false);
         }
     }
 }

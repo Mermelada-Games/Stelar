@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Galaxy : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1f;
+    private SceneFade sceneFade;
     private CameraController cameraController;
 
     private void Start()
     {
+        sceneFade = FindObjectOfType<SceneFade>();
         cameraController = FindObjectOfType<CameraController>();
     }
 
@@ -30,7 +31,7 @@ public class Galaxy : MonoBehaviour
 
     private IEnumerator ChangeLevel()
     {
-        yield return new WaitForSeconds(5.0f);
-        SceneManager.LoadScene("Scene");
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(sceneFade.FadeOutAndLoad("Scene"));
     }
 }
