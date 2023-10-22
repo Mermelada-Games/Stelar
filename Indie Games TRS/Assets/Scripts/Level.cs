@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] GameObject[] stars;
+    [SerializeField] private GameObject[] stars;
+    [SerializeField] private UIStar[] uiStars;
+    [SerializeField] private float changeLevelDelay =  5f;
     public int starsCount = 0;
     private bool starsCollected = false;
+    private bool levelCompleted = false;
     public bool endCell = false;
+    public Line lineScript;
 
     private void Update()
     {
@@ -17,18 +22,33 @@ public class Level : MonoBehaviour
             starsCollected = true;
         }
 
-        if (starsCollected && endCell)
+        if (starsCollected && endCell && !levelCompleted)
         {
-            ChangeLevel();
+            levelCompleted = true;
+            ChangeLevelWithDelay();
         }
     }
 
-    private void ChangeLevel()
+    private void ChangeLevelWithDelay()
     {
-        Debug.Log("LEVEL COMPLETED!");
         PlayerPrefs.SetInt("levelReached", 2);
         PlayerPrefs.Save();
+        StartCoroutine(lineScript.LineAnimation());
+        StartCoroutine(ChangeLevelAfterDelay());
+    }
+
+    private IEnumerator ChangeLevelAfterDelay()
+    {
+        yield return new WaitForSeconds(changeLevelDelay);
 
         SceneManager.LoadScene("SelectLevelScene");
+    }
+
+    public void CollectStar(int starIndex)
+    {
+        if (starIndex >= 0 && starIndex < uiStars.Length)
+        {
+            uiStars[starIndex].CollectStar();
+        }
     }
 }

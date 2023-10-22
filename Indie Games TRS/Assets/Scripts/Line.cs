@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private float animationDuration = 5f;
+    [SerializeField] private float animationDuration = 3f;
 
     private LineRenderer lineRenderer;
     private Vector3[] linePoints;
@@ -12,20 +12,18 @@ public class Line : MonoBehaviour
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
 
         pointsCount = lineRenderer.positionCount;
         linePoints = new Vector3[pointsCount];
-        for (int i = 0; i < pointsCount; i++)
-        {
-            linePoints[i] = lineRenderer.GetPosition(i);
-        }
-
-        StartCoroutine(AnimateLine());
+        lineRenderer.GetPositions(linePoints);
     }
 
-    private IEnumerator AnimateLine()
+    public IEnumerator LineAnimation()
     {
-        float segmentDuration = animationDuration / pointsCount;
+        lineRenderer.enabled = true;
+
+        float segmentDuration = animationDuration / (pointsCount - 1);
 
         for (int i = 0; i < pointsCount - 1; i++)
         {
@@ -34,17 +32,18 @@ public class Line : MonoBehaviour
             Vector3 startPosition = linePoints[i];
             Vector3 endPosition = linePoints[i + 1];
 
-            Vector3 pos = startPosition;
-            while (pos != endPosition)
+            while (Time.time - startTime < segmentDuration)
             {
                 float t = (Time.time - startTime) / segmentDuration;
-                pos = Vector3.Lerp(startPosition, endPosition, t);
+                Vector3 pos = Vector3.Lerp(startPosition, endPosition, t);
 
                 for (int j = i + 1; j < pointsCount; j++)
                     lineRenderer.SetPosition(j, pos);
 
                 yield return null;
             }
+
+            lineRenderer.SetPosition(i + 1, endPosition);
         }
     }
 }
