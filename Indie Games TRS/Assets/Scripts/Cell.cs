@@ -43,10 +43,10 @@ public class Cell : MonoBehaviour
         {
             isDragging = true;
             cellPosition = transform.position;
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            Color color = spriteRenderer.color;
-            color.a = 0.5f;
-            spriteRenderer.color = color;
+            // SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            // Color color = spriteRenderer.color;
+            // color.a = 0.5f;
+            // spriteRenderer.color = color;
         }
         
     }
@@ -55,10 +55,10 @@ public class Cell : MonoBehaviour
     {
         isDragging = false;
 
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        Color color = spriteRenderer.color;
-        color.a = 1f;
-        GetComponent<SpriteRenderer>().color = color;
+        // SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        // Color color = spriteRenderer.color;
+        // color.a = 1f;
+        // GetComponent<SpriteRenderer>().color = color;
     }
 
     private void Update()
