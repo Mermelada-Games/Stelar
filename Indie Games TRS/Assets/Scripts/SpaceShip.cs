@@ -63,6 +63,11 @@ public class SpaceShip : MonoBehaviour
         nextCell = gridSystem.GetNextCell(currentCell);
         if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
         {
+            if (currentCell.isRotationCell)
+            {
+                gridSystem.RotateCell(currentCell);
+            }
+
             if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
                 AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
             {

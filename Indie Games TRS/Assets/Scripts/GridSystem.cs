@@ -154,4 +154,42 @@ public class GridSystem : MonoBehaviour
         isGameStarted = false;
     }
 
+    public void RotateCell(Cell cell)
+    {
+        cell.transform.Rotate(0, 0, -90);
+
+        switch (cell.exitCellFace)
+        {
+            case Cell.CellFace.Up:
+                cell.exitCellFace = Cell.CellFace.Right;
+                break;
+            case Cell.CellFace.Right:
+                cell.exitCellFace = Cell.CellFace.Down;
+                break;
+            case Cell.CellFace.Down:
+                cell.exitCellFace = Cell.CellFace.Left;
+                break;
+            case Cell.CellFace.Left:
+                cell.exitCellFace = Cell.CellFace.Up;
+                break;
+        }
+
+        switch (cell.enterCellFace)
+        {
+            case Cell.CellFace.Up:
+                cell.enterCellFace = Cell.CellFace.Right;
+                break;
+            case Cell.CellFace.Right:
+                cell.enterCellFace = Cell.CellFace.Down;
+                break;
+            case Cell.CellFace.Down:
+                cell.enterCellFace = Cell.CellFace.Left;
+                break;
+            case Cell.CellFace.Left:
+                cell.enterCellFace = Cell.CellFace.Up;
+                break;
+        }
+    }
+
+
 }
