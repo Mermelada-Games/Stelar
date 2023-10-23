@@ -5714,7 +5714,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -5848,11 +5848,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 754325131}
-  targetTransform: {fileID: 1003273676}
   zoomInSize: 2
   zoomOutSize: 5
   zoomSpeed: 2
-  startLevel: 0
+  galaxyTransform: {fileID: 0}
+  targetTransform: {fileID: 1003273676}
+  selectLevel: 0
 --- !u!1 &609375247
 GameObject:
   m_ObjectHideFlags: 0

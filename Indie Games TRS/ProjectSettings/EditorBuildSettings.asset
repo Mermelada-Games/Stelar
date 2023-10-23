@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Galaxy.unity
     guid: d2bd36cf09f24bd48b9c675de16d0eca
   - enabled: 1
-    path: Assets/Scenes/SelectLevelScene.unity
+    path: Assets/Scenes/Logo.unity
     guid: fd781faf3d437974fbf3f9d08dd68616
   - enabled: 1
     path: Assets/Scenes/Scene.unity
