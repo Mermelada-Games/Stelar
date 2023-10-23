@@ -12,11 +12,6 @@ public class Star : MonoBehaviour
         light2D.intensity = 0;
     }
 
-    void Update()
-    {
-        Debug.Log("intensity: " + light2D.intensity);
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

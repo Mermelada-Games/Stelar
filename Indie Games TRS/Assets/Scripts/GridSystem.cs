@@ -26,7 +26,7 @@ public class GridSystem : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0) && selectedCell != null)
             {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(selectedCell.transform.position, 0.1f);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(selectedCell.transform.position, 0.05f);
 
                 if (colliders.Length > 1)
                 {
@@ -37,6 +37,10 @@ public class GridSystem : MonoBehaviour
                             Cell otherCell = collider.GetComponent<Cell>();
                             TrySwapCells(selectedCell, otherCell);
                             break;
+                        }
+                        else
+                        {
+                            selectedCell.transform.position = selectedCell.CellPosition;
                         }
                     }
                 }
