@@ -6,8 +6,14 @@ using UnityEngine;
 public class GridSystem : MonoBehaviour
 {
     private Cell selectedCell;
+    private Level level;
     private int sortingOrder = 0;
     private bool isGameStarted = false;
+
+    private void Start()
+    {
+        level = FindObjectOfType<Level>();
+    }
 
     private void Update()
     {
@@ -131,6 +137,21 @@ public class GridSystem : MonoBehaviour
             cell.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         isGameStarted = true;
+    }
+
+    public void RestartGame()
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            cell.DisableCollider();
+            cell.enterCellFace = cell.initialEnterCellFace;
+            cell.exitCellFace = cell.initialExitCellFace;
+            cell.canDrag = true;
+            cell.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        }
+        level.RestartLevel();
+        isGameStarted = false;
     }
 
 }

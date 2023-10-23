@@ -19,22 +19,18 @@ public class Cell : MonoBehaviour
 
     private Vector3 initialPosition;
     private Vector3 cellPosition;
+    public CellFace initialEnterCellFace;
+    public CellFace initialExitCellFace;
     private bool isDragging = false;
     public bool canDrag = true;
 
     private void Start()
     {
+        initialEnterCellFace = enterCellFace;
+        initialExitCellFace = exitCellFace;
         initialPosition = transform.position;
         cellPosition = transform.position;
-
-        if (isStartCell || isEndCell)
-        {
-            Collider2D collider = GetComponent<Collider2D>();
-            if (collider != null)
-            {
-                collider.enabled = false;
-            }
-        }
+        DisableCollider();
     }
 
     private void OnMouseDown()
@@ -83,5 +79,17 @@ public class Cell : MonoBehaviour
     public void ResetCellPosition()
     {
         cellPosition = transform.position;
+    }
+
+    public void DisableCollider()
+    {
+        if (isStartCell || isEndCell)
+        {
+            Collider2D collider = GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+        }
     }
 }

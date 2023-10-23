@@ -9,7 +9,7 @@ public class Star : MonoBehaviour
     private void Start()
     {
         light2D = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
-        light2D.intensity = 0;
+        RestartStar();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -34,5 +34,10 @@ public class Star : MonoBehaviour
             light2D.intensity -= 6f * Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void RestartStar()
+    {
+        light2D.intensity = 0;
     }
 }

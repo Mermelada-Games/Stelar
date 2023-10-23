@@ -10,6 +10,7 @@ public class SpaceShip : MonoBehaviour
     [SerializeField] private int maxMovements;
     
     private Vector3 initialPosition;
+    private Vector3 firstPosition;
 
     private GridSystem gridSystem;
     private Level level;
@@ -21,6 +22,7 @@ public class SpaceShip : MonoBehaviour
 
     private void Start()
     {
+        firstPosition = transform.position;
         level = FindObjectOfType<Level>();
         gridSystem = FindObjectOfType<GridSystem>();
         currentCell = gridSystem.GetCellAtPosition(transform.position);
@@ -44,6 +46,7 @@ public class SpaceShip : MonoBehaviour
         else
         {
             if (canMove) Move();
+            else RestartGame();
         }
 
         if (currentCell.isEndCell)
@@ -169,6 +172,13 @@ public class SpaceShip : MonoBehaviour
     {
         canMove = true;
         gridSystem.StartGame();
+    }
+
+    public void RestartGame()
+    {
+        canMove = false;
+        transform.position = firstPosition;
+        gridSystem.RestartGame();
     }
 
 }

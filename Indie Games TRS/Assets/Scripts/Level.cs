@@ -47,4 +47,12 @@ public class Level : MonoBehaviour
         yield return new WaitForSeconds(changeLevelDelay);
         sceneFade.EndLevel("Galaxy");
     }
+
+    public void RestartLevel()
+    {
+        foreach (GameObject star in stars)
+        {
+            star.GetComponent<Star>().RestartStar();
+        }
+    }
 }
