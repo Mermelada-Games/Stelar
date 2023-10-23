@@ -23,8 +23,9 @@ public class Galaxy : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null && hit.collider.CompareTag("Constellation"))
             {
-                cameraController.startLevel = true;
-                StartCoroutine(ChangeLevel());
+                cameraController.targetTransform = hit.collider.transform;
+                cameraController.selectLevel = true;
+                // StartCoroutine(ChangeLevel());
             }
         }
     }

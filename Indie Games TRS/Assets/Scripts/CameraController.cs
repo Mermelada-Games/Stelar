@@ -6,16 +6,17 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    [SerializeField] public Transform targetTransform;
     [SerializeField] public float zoomInSize = 2.0f;
     [SerializeField] public float zoomOutSize = 5.0f;
     [SerializeField] public float zoomSpeed = 2.0f;
+    [SerializeField] private Transform galaxyTransform;
 
+    public Transform targetTransform;
     private float currentSize;
     private float targetSize;
 
-    public bool startLevel = false;
-    private bool levelStarted = false;
+    public bool selectLevel = false;
+    private bool levelSelected = false;
 
     private void Start()
     {
@@ -23,16 +24,12 @@ public class CameraController : MonoBehaviour
         targetSize = currentSize;
     }
 
-    void Update()
+    private void Update()
     {
-        if (startLevel && !levelStarted)
+        if (selectLevel && !levelSelected)
         {
-            levelStarted = true;
+            levelSelected = true;
             targetSize = zoomInSize;
-        }
-        else if (Input.GetKeyDown(KeyCode.Z))
-        {
-            targetSize = zoomOutSize;
         }
 
         if (currentSize != targetSize)
@@ -42,7 +39,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void ChangeCameraZoomAndLookAt(Transform target, float newSize)
+    private void ChangeCameraZoomAndLookAt(Transform target, float newSize)
     {
         if (virtualCamera != null)
         {
@@ -50,5 +47,13 @@ public class CameraController : MonoBehaviour
             virtualCamera.m_Follow = target;
             virtualCamera.m_LookAt = target;
         }
+    }
+
+    public void ZoomOut()
+    {
+        selectLevel = false;
+        levelSelected = false;
+        targetTransform = galaxyTransform;
+        targetSize = zoomOutSize;
     }
 }
