@@ -93,6 +93,27 @@ public class SpaceShip : MonoBehaviour
             }
             else
             {
+                moveDistance = 1.0f;
+
+                isMoving = true;
+
+                if (currentCell.exitCellFace == Cell.CellFace.Up)
+                {
+                    moveDirection = Vector3.up;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Down)
+                {
+                    moveDirection = Vector3.down;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Left)
+                {
+                    moveDirection = Vector3.left;
+                }
+                else if (currentCell.exitCellFace == Cell.CellFace.Right)
+                {
+                    moveDirection = Vector3.right;
+                }
+
                 canMove = false;
             }
         }
@@ -117,36 +138,37 @@ public class SpaceShip : MonoBehaviour
     }
 
     private void RotateDirection(Vector3 direction)
-{
-    Vector3 targetEulerAngles = Vector3.zero;
+    {
+        Vector3 targetEulerAngles = Vector3.zero;
 
-    if (direction == Vector3.up)
-    {
-        targetEulerAngles = new Vector3(0, 0, 90);
-    }
-    else if (direction == Vector3.down)
-    {
-        targetEulerAngles = new Vector3(0, 0, -90);
-    }
-    else if (direction == Vector3.left)
-    {
-        targetEulerAngles = new Vector3(0, 0, 180);
-    }
-    else if (direction == Vector3.right)
-    {
-        targetEulerAngles = Vector3.zero;
-    }
+        if (direction == Vector3.up)
+        {
+            targetEulerAngles = new Vector3(0, 0, 90);
+        }
+        else if (direction == Vector3.down)
+        {
+            targetEulerAngles = new Vector3(0, 0, -90);
+        }
+        else if (direction == Vector3.left)
+        {
+            targetEulerAngles = new Vector3(0, 0, 180);
+        }
+        else if (direction == Vector3.right)
+        {
+            targetEulerAngles = Vector3.zero;
+        }
 
-    Quaternion targetRotation = Quaternion.Euler(targetEulerAngles);
-    foreach (Transform child in transform)
-    {
-        child.rotation = Quaternion.RotateTowards(child.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.Euler(targetEulerAngles);
+        foreach (Transform child in transform)
+        {
+            child.rotation = Quaternion.RotateTowards(child.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
-}
 
     public void startMovement()
     {
         canMove = true;
         gridSystem.StartGame();
     }
+
 }

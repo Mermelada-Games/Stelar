@@ -5854,6 +5854,7 @@ MonoBehaviour:
   galaxyTransform: {fileID: 0}
   targetTransform: {fileID: 1003273676}
   selectLevel: 0
+  levelSelected: 0
 --- !u!1 &609375247
 GameObject:
   m_ObjectHideFlags: 0
@@ -6201,7 +6202,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &644843387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6461,7 +6462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationDuration: 2
   minIntensity: 1
-  maxIntensity: 1.2
+  maxIntensity: 1.6
   blinkSpeed: 4
   light2D: {fileID: 668403173}
 --- !u!114 &668403173
@@ -6471,7 +6472,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668403169}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -6481,13 +6482,13 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: -1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 1
   m_NormalMapDistance: 3
@@ -6498,8 +6499,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.4043, y: 3.7886, z: 0}
-    m_Extent: {x: 2.7784002, y: 4.0879, z: 0}
+    m_Center: {x: -2.4068, y: 3.79935, z: 0}
+    m_Extent: {x: 2.774, y: 4.09275, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -6649,7 +6650,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &723262437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7728,7 +7729,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1056389735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8126,7 +8127,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1105865009
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9067,7 +9068,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1375655755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9797,6 +9798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  constellation: {fileID: 0}
 --- !u!4 &1702371383
 Transform:
   m_ObjectHideFlags: 0

@@ -6238,7 +6238,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &407801816
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7127,7 +7127,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &644843387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7430,8 +7430,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.4043, y: 3.7886, z: 0}
-    m_Extent: {x: 2.7784002, y: 4.0879, z: 0}
+    m_Center: {x: -2.3987, y: 3.79735, z: 0}
+    m_Extent: {x: 2.7702, y: 4.09225, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -7581,7 +7581,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &723262437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8968,7 +8968,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1056389735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9366,7 +9366,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1105865009
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10603,7 +10603,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1375655755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11435,7 +11435,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1657675652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22272,7 +22272,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!212 &1944424226
 SpriteRenderer:
   m_ObjectHideFlags: 0

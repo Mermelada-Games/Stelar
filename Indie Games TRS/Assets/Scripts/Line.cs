@@ -54,16 +54,15 @@ public class Line : MonoBehaviour
 
             lineRenderer.SetPosition(i + 1, endPosition);
         }
+        
+        StartCoroutine(EnableLight());
+    }
 
-        float timeElapsed = 0f;
-
-        while (timeElapsed < animationDuration)
+    private IEnumerator EnableLight()
+    {
+        while (light2D.intensity < 2)
         {
-            float blinkValue = Mathf.Sin(blinkSpeed * timeElapsed);
-            float intensity = Mathf.Lerp(minIntensity, maxIntensity, (blinkValue + 1) / 2);
-            light2D.intensity = intensity;
-
-            timeElapsed += Time.deltaTime;
+            light2D.intensity += 1f * Time.deltaTime;
             yield return null;
         }
     }
