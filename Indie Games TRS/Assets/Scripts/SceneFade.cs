@@ -16,6 +16,7 @@ public class SceneFade : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
+        fadeImage.enabled = true;
         fadeImage.color = Color.black;
         Color originalColor = fadeImage.color;
         Color targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
@@ -30,10 +31,12 @@ public class SceneFade : MonoBehaviour
             fadeImage.color = Color.Lerp(originalColor, targetColor, t);
             yield return null;
         }
+        fadeImage.enabled = false;
     }
 
     public IEnumerator FadeOutAndLoad(string sceneName)
     {
+        fadeImage.enabled = true;
         isFading = true;
         fadeImage.color = Color.clear;
         Color originalColor = fadeImage.color;
