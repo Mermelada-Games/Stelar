@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     private float targetSize;
 
     public bool selectLevel = false;
-    private bool levelSelected = false;
+    public bool levelSelected = false;
 
     private void Start()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Galaxy : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private GameObject constellation;
     private SceneFade sceneFade;
     private CameraController cameraController;
 
@@ -23,16 +24,16 @@ public class Galaxy : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null && hit.collider.CompareTag("Constellation"))
             {
-                cameraController.targetTransform = hit.collider.transform;
-                cameraController.selectLevel = true;
-                // StartCoroutine(ChangeLevel());
+                if ( !cameraController.levelSelected)
+                {
+                    cameraController.targetTransform = hit.collider.transform;
+                    cameraController.selectLevel = true;
+                }
+                else
+                {
+                    StartCoroutine(sceneFade.FadeOutAndLoad("Scene")); 
+                }
             }
         }
-    }
-
-    private IEnumerator ChangeLevel()
-    {
-        yield return new WaitForSeconds(2.0f);
-        StartCoroutine(sceneFade.FadeOutAndLoad("Scene"));
     }
 }

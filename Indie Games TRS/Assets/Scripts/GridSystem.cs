@@ -111,9 +111,12 @@ public class GridSystem : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(exitfacePosition, Vector2.zero);
         if (hit.collider != null && hit.collider.CompareTag("Cell"))
         {
+            Debug.Log("collider");
             Cell nextCell = hit.collider.GetComponent<Cell>();
+            Debug.Log("next cell: " + nextCell);
             return nextCell;
         }
+        Debug.Log("null");
         return null;
     }
 

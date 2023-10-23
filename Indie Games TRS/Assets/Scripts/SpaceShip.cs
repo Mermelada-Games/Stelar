@@ -58,7 +58,6 @@ public class SpaceShip : MonoBehaviour
         moveDistance = 2.5f;
         currentCell = gridSystem.GetCellAtPosition(transform.position);
         nextCell = gridSystem.GetNextCell(currentCell);
-
         if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
         {
             if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
@@ -90,7 +89,7 @@ public class SpaceShip : MonoBehaviour
                 }
 
                 maxMovements--;
-                Debug.Log(maxMovements);
+                // Debug.Log(maxMovements);
             }
             else
             {
