@@ -12,21 +12,32 @@ public class Star : MonoBehaviour
         light2D.intensity = 0;
     }
 
+    void Update()
+    {
+        Debug.Log("intensity: " + light2D.intensity);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Level level = FindObjectOfType<Level>();
             level.starsCount++;
-            EnableLight();
+            StartCoroutine(EnableLight());
         }
     }
 
-    private void EnableLight()
+    private IEnumerator EnableLight()
     {
-        while(light2D.intensity < 1)
+        while(light2D.intensity < 12)
         {
-            light2D.intensity += 0.05f * Time.deltaTime;
+            light2D.intensity += 12f * Time.deltaTime;
+            yield return null;
+        }
+        while (light2D.intensity > 6)
+        {
+            light2D.intensity -= 6f * Time.deltaTime;
+            yield return null;
         }
     }
 }
