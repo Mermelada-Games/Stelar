@@ -31,7 +31,7 @@ public class Galaxy : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(sceneFade.FadeOutAndLoad("Scene")); 
+                    sceneFade.EndLevel("Scene"); 
                 }
             }
         }

@@ -13,7 +13,13 @@ public class Level : MonoBehaviour
     private bool levelCompleted = false;
     public bool endCell = false;
     public Line lineScript;
+    private SceneFade sceneFade;
 
+    private void Start()
+    {
+        sceneFade = FindObjectOfType<SceneFade>();
+    }
+    
     private void Update()
     {
         if (starsCount == stars.Length)
@@ -39,7 +45,6 @@ public class Level : MonoBehaviour
     private IEnumerator ChangeLevelAfterDelay()
     {
         yield return new WaitForSeconds(changeLevelDelay);
-
-        SceneManager.LoadScene("Galaxy");
+        sceneFade.EndLevel("Galaxy");
     }
 }

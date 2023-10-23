@@ -6639,8 +6639,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -7392,9 +7392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDuration: 2
-  minIntensity: 1
-  maxIntensity: 1.2
-  blinkSpeed: 4
   light2D: {fileID: 668403173}
 --- !u!114 &668403173
 MonoBehaviour:
@@ -9619,7 +9616,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1155273060}
+  startTransition: 0
+  fadeIn: 0
   fadeDuration: 1
+  transition: {fileID: 0}
 --- !u!114 &1155273060
 MonoBehaviour:
   m_ObjectHideFlags: 0

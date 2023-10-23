@@ -5,9 +5,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class Line : MonoBehaviour
 {
     [SerializeField] private float animationDuration = 3f;
-    [SerializeField] private float minIntensity = 1f;
-    [SerializeField] private float maxIntensity = 3f;
-    [SerializeField] private float blinkSpeed = 2f;
 
     public UnityEngine.Rendering.Universal.Light2D light2D;
     private LineRenderer lineRenderer;

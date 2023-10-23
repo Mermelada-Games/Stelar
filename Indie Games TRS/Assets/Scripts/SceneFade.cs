@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class SceneFade : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
+    [SerializeField] private bool startTransition = false;
+    [SerializeField] private bool fadeIn = false;
     public float fadeDuration = 1.0f;
-    private bool isFading = false;
+    private string sceneName;
+
+    [SerializeField] private Animator transition;
 
     private void Start()
     {
-        StartCoroutine(FadeIn());
+        if (fadeIn) StartCoroutine(FadeIn());
+        if (startTransition) transition.SetTrigger("Start");
     }
 
     public IEnumerator FadeIn()
@@ -37,7 +42,6 @@ public class SceneFade : MonoBehaviour
     public IEnumerator FadeOutAndLoad(string sceneName)
     {
         fadeImage.enabled = true;
-        isFading = true;
         fadeImage.color = Color.clear;
         Color originalColor = fadeImage.color;
         Color targetColor = Color.black;
@@ -53,6 +57,17 @@ public class SceneFade : MonoBehaviour
             yield return null;
         }
 
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void EndLevel(string scene)
+    {
+        transition.SetTrigger("End");
+        sceneName = scene;
+    }
+
+    public void ChangeScene()
+    {
         SceneManager.LoadScene(sceneName);
     }
 }
