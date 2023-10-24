@@ -685,7 +685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099892874253582786, guid: 533144c800b3b4e08895769d36a3fdf0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 9099892874253582786, guid: 533144c800b3b4e08895769d36a3fdf0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6421,7 +6421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797306137265370862, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1797306137265370862, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6459,9 +6459,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3188617408909012511, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: isPortalEnterCell
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6677211582031137506, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_Name
       value: Esquerra
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677211582031137506, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6811,6 +6819,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 904946012}
     m_Modifications:
+    - target: {fileID: 286621819804029458, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
+      propertyPath: isStartCell
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1102468973197889682, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7596,7 +7608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797306137265370862, guid: 9ce8f4cd48eb84a6da9eabc0353b0b59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.4
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1797306137265370862, guid: 9ce8f4cd48eb84a6da9eabc0353b0b59, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7821,7 +7833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3188617408909012511, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: isEndCell
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6677211582031137506, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_Name
@@ -12965,7 +12977,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stars:
   - {fileID: 1056389732}
+  levelIdx: 0
   changeLevelDelay: 4
+  hasAnimation: 1
   starsCount: 0
   endCell: 0
   lineScript: {fileID: 0}
@@ -17856,6 +17870,10 @@ PrefabInstance:
       value: Dreta
       objectReference: {fileID: 0}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: isStartCell
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: isPortalExitCell
       value: 1
       objectReference: {fileID: 0}
@@ -18075,6 +18093,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 904946012}
     m_Modifications:
+    - target: {fileID: 286621819804029458, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
+      propertyPath: isEndCell
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1102468973197889682, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
       propertyPath: m_RootOrder
       value: -1

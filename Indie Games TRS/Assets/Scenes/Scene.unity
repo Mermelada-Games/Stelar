@@ -6923,8 +6923,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.40135, y: 3.7897, z: 0}
-    m_Extent: {x: 2.7810502, y: 4.0879, z: 0}
+    m_Center: {x: -2.3996, y: 3.7926, z: 0}
+    m_Extent: {x: 2.7703, y: 4.0949, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
