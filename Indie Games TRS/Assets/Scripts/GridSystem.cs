@@ -148,6 +148,7 @@ public class GridSystem : MonoBehaviour
             cell.enterCellFace = cell.initialEnterCellFace;
             cell.exitCellFace = cell.initialExitCellFace;
             cell.transform.rotation = Quaternion.identity;
+            cell.isBlackHoleCell = false;
             cell.canDrag = true;
             cell.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
@@ -208,10 +209,10 @@ public class GridSystem : MonoBehaviour
 
     public Cell IsInBlackHoleZone()
     {
+        Debug.Log("IsInBlackHoleZone");
         Cell[] cells = FindObjectsOfType<Cell>();
         foreach (Cell cell in cells)
         {
-            cell.isBlackHoleCell = false;
             if (cell.isStartBlackHoleCell)
             {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(cell.transform.position, 3.0f);
