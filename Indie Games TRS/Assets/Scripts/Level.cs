@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
     [SerializeField] private GameObject[] stars;
+    [SerializeField] private int levelIdx = 0;
     [SerializeField] private float changeLevelDelay =  5f;
+    [SerializeField] private bool hasAnimation = true;
     public int starsCount = 0;
     private bool starsCollected = false;
     private bool levelCompleted = false;
@@ -36,9 +38,9 @@ public class Level : MonoBehaviour
 
     private void ChangeLevelWithDelay()
     {
-        PlayerPrefs.SetInt("levelReached", 1);
+        PlayerPrefs.SetInt("levelReached", levelIdx);
         PlayerPrefs.Save();
-        StartCoroutine(lineScript.LineAnimation());
+        if (hasAnimation) StartCoroutine(lineScript.LineAnimation());
         StartCoroutine(ChangeLevelAfterDelay());
     }
 

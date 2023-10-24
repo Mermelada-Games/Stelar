@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43998420
@@ -6923,8 +6923,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3957, y: 3.7883, z: 0}
-    m_Extent: {x: 2.7813, y: 4.0969, z: 0}
+    m_Center: {x: -2.40135, y: 3.7897, z: 0}
+    m_Extent: {x: 2.7810502, y: 4.0879, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -10663,7 +10663,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  constellation: {fileID: 0}
+  constellation:
+  - {fileID: 0}
+  sceneName: []
 --- !u!4 &1702371383
 Transform:
   m_ObjectHideFlags: 0
@@ -16285,7 +16287,9 @@ MonoBehaviour:
   - {fileID: 723262432}
   - {fileID: 1375655750}
   - {fileID: 644843383}
+  levelIdx: 2
   changeLevelDelay: 4
+  hasAnimation: 1
   starsCount: 0
   endCell: 0
   lineScript: {fileID: 668403172}
