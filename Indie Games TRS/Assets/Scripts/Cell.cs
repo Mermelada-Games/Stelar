@@ -15,6 +15,10 @@ public class Cell : MonoBehaviour
     [SerializeField] public CellFace enterCellFace;
     [SerializeField] public CellFace exitCellFace;
     [SerializeField] public bool isRotationCell;
+    [SerializeField] public bool isObstacleCell;
+    [SerializeField] public bool isPortalEnterCell;
+    [SerializeField] public bool isPortalExitCell;
+    [SerializeField] public bool isBlackHoleCell;
     [SerializeField] public bool isStartCell;
     [SerializeField] public bool isEndCell;
 

@@ -16,9 +16,11 @@ public class SpaceShip : MonoBehaviour
     private Level level;
     private Cell currentCell;
     private Cell nextCell;
+    private Cell exitPortalCell;
     private Vector3 moveDirection = Vector3.zero;
     private bool isMoving = false;
     private bool canMove = false;
+    private bool isWaiting = false;
 
     private void Start()
     {
@@ -46,7 +48,7 @@ public class SpaceShip : MonoBehaviour
         else
         {
             if (canMove) Move();
-            else RestartGame();
+            else if (!currentCell.isEndCell) RestartGame();
         }
 
         if (currentCell.isEndCell)
@@ -63,67 +65,87 @@ public class SpaceShip : MonoBehaviour
         nextCell = gridSystem.GetNextCell(currentCell);
         if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
         {
+            Debug.Log("currentCell.enterCellFace: " + currentCell.enterCellFace + " currentCell.exitCellFace: " + currentCell.exitCellFace + "nextCell.enterCellFace: " + nextCell.enterCellFace + " nextCell.exitCellFace: " + nextCell.exitCellFace);
+            
             if (currentCell.isRotationCell)
             {
+                Debug.Log("RotateCell");
                 gridSystem.RotateCell(currentCell);
+                currentCell = gridSystem.GetCellAtPosition(transform.position);
+                nextCell = gridSystem.GetNextCell(currentCell);
+                StartCoroutine(Wait());
             }
 
-            if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
-                AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
+            if (currentCell.isPortalEnterCell)
             {
-                isMoving = true;
-
-                if (currentCell.exitCellFace == Cell.CellFace.Up)
-                {
-                    moveDirection = Vector3.up;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Down)
-                {
-                    moveDirection = Vector3.down;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Left)
-                {
-                    moveDirection = Vector3.left;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Right)
-                {
-                    moveDirection = Vector3.right;
-                }
-
-
-                if (AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
-                {
-                    nextCell.exitCellFace = nextCell.enterCellFace;
-                }
-
-                maxMovements--;
-                // Debug.Log(maxMovements);
+                Debug.Log("PortalEnterCell");
+                exitPortalCell = gridSystem.Portal();
+                transform.position = exitPortalCell.transform.position;
+                currentCell = gridSystem.GetCellAtPosition(transform.position);
+                nextCell = gridSystem.GetNextCell(currentCell);
+                StartCoroutine(Wait());
             }
-            else
+
+            if (!isWaiting)
             {
-                moveDistance = 1.0f;
+                if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
+                    AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
+                {
+                    isMoving = true;
 
-                isMoving = true;
+                    if (currentCell.exitCellFace == Cell.CellFace.Up)
+                    {
+                        moveDirection = Vector3.up;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Down)
+                    {
+                        moveDirection = Vector3.down;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Left)
+                    {
+                        moveDirection = Vector3.left;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Right)
+                    {
+                        moveDirection = Vector3.right;
+                    }
 
-                if (currentCell.exitCellFace == Cell.CellFace.Up)
-                {
-                    moveDirection = Vector3.up;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Down)
-                {
-                    moveDirection = Vector3.down;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Left)
-                {
-                    moveDirection = Vector3.left;
-                }
-                else if (currentCell.exitCellFace == Cell.CellFace.Right)
-                {
-                    moveDirection = Vector3.right;
-                }
 
-                canMove = false;
+                    if (AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
+                    {
+                        nextCell.exitCellFace = nextCell.enterCellFace;
+                    }
+
+                    maxMovements--;
+                    // Debug.Log(maxMovements);
+                }
+                else
+                {
+                    moveDistance = 1.0f;
+
+                    isMoving = true;
+
+                    if (currentCell.exitCellFace == Cell.CellFace.Up)
+                    {
+                        moveDirection = Vector3.up;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Down)
+                    {
+                        moveDirection = Vector3.down;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Left)
+                    {
+                        moveDirection = Vector3.left;
+                    }
+                    else if (currentCell.exitCellFace == Cell.CellFace.Right)
+                    {
+                        moveDirection = Vector3.right;
+                    }
+
+                    canMove = false;
+                }
             }
+            
         }
         else
         {
@@ -186,4 +208,10 @@ public class SpaceShip : MonoBehaviour
         gridSystem.RestartGame();
     }
 
+    private IEnumerator Wait()
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(1.0f);
+        isWaiting = false;
+    }
 }

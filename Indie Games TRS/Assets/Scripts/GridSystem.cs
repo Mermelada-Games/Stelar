@@ -147,6 +147,7 @@ public class GridSystem : MonoBehaviour
             cell.DisableCollider();
             cell.enterCellFace = cell.initialEnterCellFace;
             cell.exitCellFace = cell.initialExitCellFace;
+            cell.transform.rotation = Quaternion.identity;
             cell.canDrag = true;
             cell.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
@@ -191,5 +192,18 @@ public class GridSystem : MonoBehaviour
         }
     }
 
+    public Cell Portal()
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            if (cell.isPortalExitCell && cell.CompareTag("Cell"))
+            {
+                Cell exitPortalCell = cell;
+                return exitPortalCell;
+            }
+        }
+        return null;
+    }
 
 }
