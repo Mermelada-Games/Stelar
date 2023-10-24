@@ -677,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6875854660392640924, guid: 533144c800b3b4e08895769d36a3fdf0, type: 3}
       propertyPath: isPortalEnterCell
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099892874253582786, guid: 533144c800b3b4e08895769d36a3fdf0, type: 3}
       propertyPath: m_RootOrder
@@ -6462,6 +6462,18 @@ PrefabInstance:
     - target: {fileID: 3188617408909012511, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: isPortalEnterCell
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459126686621102302, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459126686621102302, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459126686621102302, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: m_Color.r
+      value: 0.88467693
       objectReference: {fileID: 0}
     - target: {fileID: 6677211582031137506, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_Name
@@ -17868,6 +17880,22 @@ PrefabInstance:
     - target: {fileID: 2130673901751378512, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_Name
       value: Dreta
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_Color.a
+      value: 0.039215688
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9496083
       objectReference: {fileID: 0}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: isStartCell

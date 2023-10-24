@@ -90,7 +90,7 @@ public class Cell : MonoBehaviour
 
     public void DisableCollider()
     {
-        if (isStartCell || isEndCell)
+        if (isStartCell || isEndCell || isPortalEnterCell || isPortalExitCell)
         {
             Collider2D collider = GetComponent<Collider2D>();
             if (collider != null)

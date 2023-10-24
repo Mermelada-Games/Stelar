@@ -52,7 +52,7 @@ public class SpaceShip : MonoBehaviour
             if (!isWaiting)
             {
                 if (canMove) Move();
-                else if (!currentCell.isEndCell && !currentCell.isStartCell) RestartGame();
+                else if (!currentCell.isEndCell) RestartGame();
             }
 
         }
@@ -216,6 +216,7 @@ public class SpaceShip : MonoBehaviour
     public void startMovement()
     {
         canMove = true;
+        isWaiting = false;
         gridSystem.StartGame();
         balckHoleCell = gridSystem.IsInBlackHoleZone();
     }
@@ -223,6 +224,7 @@ public class SpaceShip : MonoBehaviour
     public void RestartGame()
     {
         canMove = false;
+        isWaiting = true;
         transform.position = firstPosition;
         gridSystem.RestartGame();
         currentCell = gridSystem.GetCellAtPosition(transform.position);
