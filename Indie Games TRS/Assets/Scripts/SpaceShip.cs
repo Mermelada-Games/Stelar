@@ -9,7 +9,7 @@ public class SpaceShip : MonoBehaviour
     [SerializeField] private float moveDistance = 2.5f;
     [SerializeField] private float rotationSpeed = 90.0f;
     [SerializeField] private int maxMovements;
-    
+
     private Vector3 initialPosition;
     private Vector3 firstPosition;
 
@@ -54,7 +54,7 @@ public class SpaceShip : MonoBehaviour
                 if (canMove) Move();
                 else if (!currentCell.isEndCell && !currentCell.isStartCell) RestartGame();
             }
-            
+
         }
 
         if (currentCell.isEndCell)
@@ -72,14 +72,14 @@ public class SpaceShip : MonoBehaviour
         if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
         {
             Debug.Log("currentCell.enterCellFace: " + currentCell.enterCellFace + " currentCell.exitCellFace: " + currentCell.exitCellFace + "nextCell.enterCellFace: " + nextCell.enterCellFace + " nextCell.exitCellFace: " + nextCell.exitCellFace);
-            
+
             if (currentCell.isRotationCell)
             {
                 Debug.Log("RotateCell");
                 gridSystem.RotateCell(currentCell);
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
-                StartCoroutine(Wait());
+                //StartCoroutine(Wait(0.5f));
             }
 
             if (currentCell.isPortalEnterCell)
@@ -89,7 +89,7 @@ public class SpaceShip : MonoBehaviour
                 transform.position = exitPortalCell.transform.position;
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
-                StartCoroutine(Wait());
+                StartCoroutine(Wait(0.5f));
             }
 
             if (currentCell.isBlackHoleCell)
@@ -163,7 +163,7 @@ public class SpaceShip : MonoBehaviour
                     canMove = false;
                 }
             }
-            
+
         }
         else
         {
@@ -228,10 +228,10 @@ public class SpaceShip : MonoBehaviour
         currentCell = gridSystem.GetCellAtPosition(transform.position);
     }
 
-    private IEnumerator Wait()
+    private IEnumerator Wait(float waitTime)
     {
         isWaiting = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(waitTime);
         isWaiting = false;
     }
 
