@@ -206,4 +206,28 @@ public class GridSystem : MonoBehaviour
         return null;
     }
 
+    public Cell IsInBlackHoleZone()
+    {
+        Cell[] cells = FindObjectsOfType<Cell>();
+        foreach (Cell cell in cells)
+        {
+            if (cell.isStartBlackHoleCell)
+            {
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(cell.transform.position, 3.0f);
+
+                foreach (Collider2D collider in colliders)
+                {
+                    if (collider.CompareTag("Cell"))
+                    {
+                        Cell blackHoleCell = collider.GetComponent<Cell>();
+                        blackHoleCell.isBlackHoleCell = true;
+                    }
+                }
+                Cell CenterBlackHoleCell = cell;
+                return CenterBlackHoleCell;
+            }
+        }
+        return null;
+    }
+
 }

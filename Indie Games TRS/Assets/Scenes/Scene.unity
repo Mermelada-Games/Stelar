@@ -560,6 +560,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -804,6 +805,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -5780,7 +5782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &395162238
 Transform:
   m_ObjectHideFlags: 0
@@ -5814,6 +5816,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -6162,6 +6165,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -6414,6 +6418,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 1
@@ -6913,8 +6918,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3953001, y: 3.7831001, z: 0}
-    m_Extent: {x: 2.774, y: 4.0951, z: 0}
+    m_Center: {x: -2.39775, y: 3.7891, z: 0}
+    m_Extent: {x: 2.77535, y: 4.101, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -7325,6 +7330,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 1
   isEndCell: 0
@@ -7911,6 +7917,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -8296,7 +8303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1104033164
 Transform:
   m_ObjectHideFlags: 0
@@ -8330,6 +8337,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -8670,6 +8678,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -9130,6 +9139,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -9285,6 +9295,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -9581,7 +9592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368897835
 Transform:
   m_ObjectHideFlags: 0
@@ -9615,6 +9626,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 1
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -10122,6 +10134,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -10277,6 +10290,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -10432,6 +10446,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 1
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -15532,6 +15547,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -15922,7 +15938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1860516561
 Transform:
   m_ObjectHideFlags: 0
@@ -15956,6 +15972,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 1
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -16111,6 +16128,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0
@@ -21180,6 +21198,7 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
   isStartCell: 0
   isEndCell: 0

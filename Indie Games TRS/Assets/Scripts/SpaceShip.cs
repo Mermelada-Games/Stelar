@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
@@ -17,6 +18,7 @@ public class SpaceShip : MonoBehaviour
     private Cell currentCell;
     private Cell nextCell;
     private Cell exitPortalCell;
+    private Cell balckHoleCell;
     private Vector3 moveDirection = Vector3.zero;
     private bool isMoving = false;
     private bool canMove = false;
@@ -47,8 +49,12 @@ public class SpaceShip : MonoBehaviour
         }
         else
         {
-            if (canMove) Move();
-            else if (!currentCell.isEndCell) RestartGame();
+            if (!isWaiting)
+            {
+                if (canMove) Move();
+                else if (!currentCell.isEndCell) RestartGame();
+            }
+            
         }
 
         if (currentCell.isEndCell)
@@ -84,6 +90,13 @@ public class SpaceShip : MonoBehaviour
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
                 StartCoroutine(Wait());
+            }
+
+            if (currentCell.isBlackHoleCell)
+            {
+                Debug.Log("BlackHoleCell");
+                StartCoroutine(MoveToBlackHole());
+                // RestartGame();
             }
 
             if (!isWaiting)
@@ -199,6 +212,7 @@ public class SpaceShip : MonoBehaviour
     {
         canMove = true;
         gridSystem.StartGame();
+        balckHoleCell = gridSystem.IsInBlackHoleZone();
     }
 
     public void RestartGame()
@@ -214,4 +228,26 @@ public class SpaceShip : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         isWaiting = false;
     }
+
+    private IEnumerator MoveToBlackHole()
+    {
+        isWaiting = true;
+        Vector3 targetPosition = balckHoleCell.transform.position;
+        float journeyLength = Vector3.Distance(transform.position, targetPosition);
+        float startTime = Time.time;
+        float distanceCovered = 0;
+
+        while (distanceCovered < journeyLength)
+        {
+            float journeyFraction = distanceCovered / journeyLength;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, journeyFraction);
+            distanceCovered = (Time.time - startTime) * 0.2f;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        isWaiting = false;
+        RestartGame();
+    }
+
 }
