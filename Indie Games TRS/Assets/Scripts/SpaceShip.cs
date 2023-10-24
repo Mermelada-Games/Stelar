@@ -79,7 +79,7 @@ public class SpaceShip : MonoBehaviour
                 gridSystem.RotateCell(currentCell);
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
-                StartCoroutine(Wait());
+                //StartCoroutine(Wait(0.5f));
             }
 
             if (currentCell.isPortalEnterCell)
@@ -89,7 +89,7 @@ public class SpaceShip : MonoBehaviour
                 transform.position = exitPortalCell.transform.position;
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
-                StartCoroutine(Wait());
+                StartCoroutine(Wait(0.5f));
             }
 
             if (currentCell.isBlackHoleCell)
@@ -228,10 +228,10 @@ public class SpaceShip : MonoBehaviour
         currentCell = gridSystem.GetCellAtPosition(transform.position);
     }
 
-    private IEnumerator Wait()
+    private IEnumerator Wait(float waitTime)
     {
         isWaiting = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(waitTime);
         isWaiting = false;
     }
 

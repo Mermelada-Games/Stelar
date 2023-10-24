@@ -6923,8 +6923,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3996, y: 3.7926, z: 0}
-    m_Extent: {x: 2.7703, y: 4.0949, z: 0}
+    m_Center: {x: -2.4004998, y: 3.79175, z: 0}
+    m_Extent: {x: 2.7669, y: 4.09725, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -10142,7 +10142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterCellFace: 1
   exitCellFace: 3
-  isRotationCell: 0
+  isRotationCell: 1
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
