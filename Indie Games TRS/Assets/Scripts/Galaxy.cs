@@ -5,7 +5,8 @@ using UnityEngine;
 public class Galaxy : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1f;
-    [SerializeField] private GameObject constellation;
+    [SerializeField] private GameObject[] constellation;
+    [SerializeField] private string[] sceneName;
     private SceneFade sceneFade;
     private CameraController cameraController;
 
@@ -31,7 +32,13 @@ public class Galaxy : MonoBehaviour
                 }
                 else
                 {
-                    sceneFade.EndLevel("Scene"); 
+                    for (int i = 0; i < constellation.Length; i++)
+                    {
+                        if (hit.collider == constellation[i].GetComponent<Collider2D>())
+                        {
+                            sceneFade.EndLevel(sceneName[i]);
+                        }
+                    }
                 }
             }
         }

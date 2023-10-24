@@ -98,6 +98,12 @@ public class SpaceShip : MonoBehaviour
                 StartCoroutine(MoveToBlackHole());
             }
 
+            if (currentCell.isJumpCell)
+            {
+                Debug.Log("JumpCell");
+                moveDistance = 5.0f;
+            }
+
             if (!isWaiting)
             {
                 if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||

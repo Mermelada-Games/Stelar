@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43998420
@@ -562,6 +562,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -807,6 +808,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -5818,6 +5820,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -6167,6 +6170,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -6420,6 +6424,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 1
   initialEnterCellFace: 0
@@ -6918,8 +6923,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3968, y: 3.795, z: 0}
-    m_Extent: {x: 2.7747998, y: 4.0875, z: 0}
+    m_Center: {x: -2.3957, y: 3.7883, z: 0}
+    m_Extent: {x: 2.7813, y: 4.0969, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -7332,6 +7337,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 1
   isEndCell: 0
   initialEnterCellFace: 0
@@ -7919,6 +7925,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -8339,6 +8346,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -8680,6 +8688,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -9141,6 +9150,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -9297,6 +9307,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -9628,6 +9639,7 @@ MonoBehaviour:
   isPortalExitCell: 1
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -10136,6 +10148,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -10292,6 +10305,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -10446,8 +10460,9 @@ MonoBehaviour:
   isObstacleCell: 0
   isPortalEnterCell: 0
   isPortalExitCell: 0
-  isStartBlackHoleCell: 1
+  isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -15549,6 +15564,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -15974,6 +15990,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -16130,6 +16147,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
@@ -21200,6 +21218,7 @@ MonoBehaviour:
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
   isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0

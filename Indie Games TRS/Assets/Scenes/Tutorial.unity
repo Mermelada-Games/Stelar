@@ -7356,7 +7356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1459803187
 Transform:
   m_ObjectHideFlags: 0
@@ -7606,7 +7606,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  constellation: {fileID: 0}
+  constellation:
+  - {fileID: 0}
+  sceneName: []
 --- !u!4 &1702371383
 Transform:
   m_ObjectHideFlags: 0

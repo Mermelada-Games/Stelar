@@ -20,6 +20,7 @@ public class Cell : MonoBehaviour
     [SerializeField] public bool isPortalExitCell;
     [SerializeField] public bool isStartBlackHoleCell;
     [SerializeField] public bool isBlackHoleCell;
+    [SerializeField] public bool isJumpCell;
     [SerializeField] public bool isStartCell;
     [SerializeField] public bool isEndCell;
 
