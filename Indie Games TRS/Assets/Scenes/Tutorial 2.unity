@@ -12977,9 +12977,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stars:
   - {fileID: 1056389732}
-  levelIdx: 2
+  levelIdx: 0
   changeLevelDelay: 4
-  hasAnimation: 0
+  hasAnimation: 1
   starsCount: 0
   endCell: 0
   lineScript: {fileID: 0}
