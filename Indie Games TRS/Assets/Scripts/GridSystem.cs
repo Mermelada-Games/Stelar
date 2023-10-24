@@ -211,6 +211,7 @@ public class GridSystem : MonoBehaviour
         Cell[] cells = FindObjectsOfType<Cell>();
         foreach (Cell cell in cells)
         {
+            cell.isBlackHoleCell = false;
             if (cell.isStartBlackHoleCell)
             {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(cell.transform.position, 3.0f);

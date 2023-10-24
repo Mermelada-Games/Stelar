@@ -52,7 +52,7 @@ public class SpaceShip : MonoBehaviour
             if (!isWaiting)
             {
                 if (canMove) Move();
-                else if (!currentCell.isEndCell) RestartGame();
+                else if (!currentCell.isEndCell && !currentCell.isStartCell) RestartGame();
             }
             
         }
@@ -96,7 +96,6 @@ public class SpaceShip : MonoBehaviour
             {
                 Debug.Log("BlackHoleCell");
                 StartCoroutine(MoveToBlackHole());
-                // RestartGame();
             }
 
             if (!isWaiting)
@@ -220,6 +219,7 @@ public class SpaceShip : MonoBehaviour
         canMove = false;
         transform.position = firstPosition;
         gridSystem.RestartGame();
+        currentCell = gridSystem.GetCellAtPosition(transform.position);
     }
 
     private IEnumerator Wait()
@@ -234,20 +234,20 @@ public class SpaceShip : MonoBehaviour
         isWaiting = true;
         Vector3 targetPosition = balckHoleCell.transform.position;
         float journeyLength = Vector3.Distance(transform.position, targetPosition);
-        float startTime = Time.time;
         float distanceCovered = 0;
+        float moveSpeed = 0.1f;
 
-        while (distanceCovered < journeyLength)
+        while (distanceCovered <= 0.3f)
         {
             float journeyFraction = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(transform.position, targetPosition, journeyFraction);
-            distanceCovered = (Time.time - startTime) * 0.2f;
+            distanceCovered += moveSpeed * Time.deltaTime;
+
             yield return null;
         }
 
-        transform.position = targetPosition;
-        isWaiting = false;
         RestartGame();
+        isWaiting = false;
     }
 
 }
