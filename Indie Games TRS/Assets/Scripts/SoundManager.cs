@@ -6,29 +6,37 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private AudioSource musicSource, fxSource;
-    private void Awake() {
+    [SerializeField] private AudioSource[] musicSources, fxSources;
 
-        musicSource.volume = 1;
-        fxSource.volume = 1;
-        if(Instance == null) {
+    private void Awake()
+    {
+        for (int i = 0; i < musicSources.Length; i++)
+        {
+            musicSources[i].volume = 1;
+        }
+        for (int i = 0; i < fxSources.Length; i++)
+        {
+            fxSources[i].volume = 1;
+        }
+
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }
 
-    public void PlaySound(AudioClip clip){
-        fxSource.PlayOneShot(clip);
+    public AudioSource[] GetMusicSources()
+    {
+        return musicSources;
     }
 
-    public AudioSource GetMusicSource(){
-        return musicSource;
-    }
-
-      public AudioSource GetFxSource(){
-          return fxSource;
+    public AudioSource[] GetFxSources()
+    {
+        return fxSources;
     }
 }

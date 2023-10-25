@@ -2,36 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
+
 public class AudioSystem : MonoBehaviour
 {
-    private Slider fxSlider;
-    private Slider musicSlider;
-    private SoundManager soundManager;
-    private void Start()
+  private Slider fxSlider;
+  private Slider musicSlider;
+  private SoundManager soundManager;
+
+  private void Start()
+  {
+    soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+    AudioSource[] musicSources = soundManager.GetMusicSources();
+    AudioSource[] fxSources = soundManager.GetFxSources();
+    fxSlider = GameObject.FindGameObjectWithTag("FxSlider").GetComponent<Slider>();
+    musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent <Slider>();
+    fxSlider.onValueChanged.AddListener(delegate { OnFxSliderValueChanged(); });
+    musicSlider.onValueChanged.AddListener(delegate { OnMusicSliderValueChanged(); });
+  }
+
+  private void OnFxSliderValueChanged()
+  {
+    SetFxVolume(fxSlider.value);
+  }
+
+  private void OnMusicSliderValueChanged()
+  {
+    SetMusicVolume(musicSlider.value);
+  }
+
+  private void SetFxVolume(float volume)
+  {
+    foreach (AudioSource fxSource in soundManager.GetFxSources())
     {
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();    
-        AudioSource musicSource = soundManager.GetMusicSource();
-        AudioSource fxSource = soundManager.GetFxSource();
-        fxSlider = GameObject.FindGameObjectWithTag("FxSlider").GetComponent<Slider>();
-        musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
-        fxSlider.onValueChanged.AddListener(delegate { OnFxSliderValueChanged(); });
-        musicSlider.onValueChanged.AddListener(delegate { OnMusicSliderValueChanged(); });
+      fxSource.volume = volume;
     }
-    private void OnFxSliderValueChanged()
+  }
+
+  private void SetMusicVolume(float volume)
+  {
+    foreach (AudioSource musicSource in soundManager.GetMusicSources())
     {
-        SetFxVolume(fxSlider.value);
+      musicSource.volume = volume;
     }
-    private void OnMusicSliderValueChanged()
+  }
+
+  public void ToggleMusicMute()
+  {
+    foreach (AudioSource musicSource in soundManager.GetMusicSources())
     {
-      SetMusicVolume(musicSlider.value);
+      musicSource.mute = !musicSource.mute;
     }
-    private void SetFxVolume(float volume)
+  }
+
+  public void ToggleFxMute()
+  {
+    foreach (AudioSource fxSource in soundManager.GetFxSources())
     {
-      soundManager.GetFxSource().volume = fxSlider.value;
+      fxSource.mute = !fxSource.mute;
     }
-      private void SetMusicVolume(float volume)
-    {
-        soundManager.GetMusicSource().volume = musicSlider.value;
-    }
+  }
 }
