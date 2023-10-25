@@ -634,7 +634,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &268782950
@@ -12123,7 +12123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27295234f9a6d5c41ae800bfa5eaabb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Galaxy
+  sceneName: MenuScene
 --- !u!114 &1231202293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12168,10 +12168,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1231202289}
-        m_TargetAssemblyTypeName: SceneFade, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 1231202292}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12313,7 +12313,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1504767446
