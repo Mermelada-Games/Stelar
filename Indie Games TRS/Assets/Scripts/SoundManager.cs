@@ -49,4 +49,5 @@ public class SoundManager : MonoBehaviour
     {
         fxSources[1].Play();
     }
+
 }
