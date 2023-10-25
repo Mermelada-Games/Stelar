@@ -9,25 +9,34 @@ public class AudioSystem : MonoBehaviour
   private Slider musicSlider;
   private SoundManager soundManager;
 
+  private bool musicMuted = false;
+  private bool fxMuted = false;
+
   private void Start()
   {
     soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
     AudioSource[] musicSources = soundManager.GetMusicSources();
     AudioSource[] fxSources = soundManager.GetFxSources();
     fxSlider = GameObject.FindGameObjectWithTag("FxSlider").GetComponent<Slider>();
-    musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent <Slider>();
+    musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
     fxSlider.onValueChanged.AddListener(delegate { OnFxSliderValueChanged(); });
     musicSlider.onValueChanged.AddListener(delegate { OnMusicSliderValueChanged(); });
   }
 
   private void OnFxSliderValueChanged()
   {
-    SetFxVolume(fxSlider.value);
+    if (!fxMuted)
+    {
+      SetFxVolume(fxSlider.value);
+    }
   }
 
   private void OnMusicSliderValueChanged()
   {
-    SetMusicVolume(musicSlider.value);
+    if (!musicMuted)
+    {
+      SetMusicVolume(musicSlider.value);
+    }
   }
 
   private void SetFxVolume(float volume)
@@ -48,17 +57,39 @@ public class AudioSystem : MonoBehaviour
 
   public void ToggleMusicMute()
   {
+    musicMuted = !musicMuted;
+
     foreach (AudioSource musicSource in soundManager.GetMusicSources())
     {
-      musicSource.mute = !musicSource.mute;
+      musicSource.mute = musicMuted;
+    }
+
+    if (musicMuted)
+    {
+      musicSlider.value = 0f;
+    }
+    else
+    {
+      musicSlider.value = soundManager.GetMusicSources()[0].volume;
     }
   }
 
   public void ToggleFxMute()
   {
+    fxMuted = !fxMuted;
+
     foreach (AudioSource fxSource in soundManager.GetFxSources())
     {
-      fxSource.mute = !fxSource.mute;
+      fxSource.mute = fxMuted;
+    }
+
+    if (fxMuted)
+    {
+      fxSlider.value = 0f;
+    }
+    else
+    {
+      fxSlider.value = soundManager.GetFxSources()[0].volume;
     }
   }
 }

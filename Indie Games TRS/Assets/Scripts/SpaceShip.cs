@@ -30,7 +30,7 @@ public class SpaceShip : MonoBehaviour
         level = FindObjectOfType<Level>();
         gridSystem = FindObjectOfType<GridSystem>();
         currentCell = gridSystem.GetCellAtPosition(transform.position);
-        Debug.Log(maxMovements);
+        //Debug.Log(maxMovements);
     }
 
     void Update()
@@ -69,13 +69,13 @@ public class SpaceShip : MonoBehaviour
         moveDistance = 2.5f;
         currentCell = gridSystem.GetCellAtPosition(transform.position);
         nextCell = gridSystem.GetNextCell(currentCell);
-        if (currentCell != null && nextCell != null && !currentCell.isEndCell && maxMovements > 0)
+        if (currentCell != null && nextCell != null && !currentCell.isEndCell) // && maxMovements > 0
         {
-            Debug.Log("currentCell.enterCellFace: " + currentCell.enterCellFace + " currentCell.exitCellFace: " + currentCell.exitCellFace + "nextCell.enterCellFace: " + nextCell.enterCellFace + " nextCell.exitCellFace: " + nextCell.exitCellFace);
+            //Debug.Log("currentCell.enterCellFace: " + currentCell.enterCellFace + " currentCell.exitCellFace: " + currentCell.exitCellFace + "nextCell.enterCellFace: " + nextCell.enterCellFace + " nextCell.exitCellFace: " + nextCell.exitCellFace);
 
             if (currentCell.isRotationCell)
             {
-                Debug.Log("RotateCell");
+                //Debug.Log("RotateCell");
                 gridSystem.RotateCell(currentCell);
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
                 nextCell = gridSystem.GetNextCell(currentCell);
@@ -84,7 +84,7 @@ public class SpaceShip : MonoBehaviour
 
             if (currentCell.isPortalEnterCell)
             {
-                Debug.Log("PortalEnterCell");
+                //Debug.Log("PortalEnterCell");
                 exitPortalCell = gridSystem.Portal();
                 transform.position = exitPortalCell.transform.position;
                 currentCell = gridSystem.GetCellAtPosition(transform.position);
@@ -94,20 +94,20 @@ public class SpaceShip : MonoBehaviour
 
             if (currentCell.isBlackHoleCell)
             {
-                Debug.Log("BlackHoleCell");
+                //Debug.Log("BlackHoleCell");
                 StartCoroutine(MoveToBlackHole());
             }
 
             if (currentCell.isJumpCell)
             {
-                Debug.Log("JumpCell");
+                //Debug.Log("JumpCell");
                 moveDistance = 5.0f;
             }
 
             if (!isWaiting)
             {
                 if (AreDirectionsValid(currentCell.exitCellFace, nextCell.enterCellFace) ||
-                    AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace))
+                    AreDirectionsValid(currentCell.exitCellFace, nextCell.exitCellFace) && !nextCell.isObstacleCell)
                 {
                     isMoving = true;
 
@@ -134,7 +134,7 @@ public class SpaceShip : MonoBehaviour
                         nextCell.exitCellFace = nextCell.enterCellFace;
                     }
 
-                    maxMovements--;
+                    //maxMovements--;
                     // Debug.Log(maxMovements);
                 }
                 else
