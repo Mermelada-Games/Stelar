@@ -22,4 +22,10 @@ public class PlayAudio : MonoBehaviour
     {
         soundManager.SplatFx();
     }
+
+    public void GlassFx()
+    {
+        soundManager.Glassfx();
+    }
+
 }
