@@ -106,7 +106,9 @@ public class SpaceShip : MonoBehaviour
             {
                 //Debug.Log("JumpCell");
                 moveDistance = 5.0f;
+                moveSpeed = 5.0f;
             }
+            else moveSpeed = 2.5f;
 
             if (!isWaiting)
             {
