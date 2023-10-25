@@ -840,13 +840,15 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cell
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: exitCellFace
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2521444517694832097, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1565834975}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
 --- !u!1001 &345586538
 PrefabInstance:
@@ -7717,11 +7719,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: exitCellFace
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: enterCellFace
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4536243959007950696, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: m_FlipX
@@ -9167,42 +9169,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8334039503626134470, guid: affd82dc429304478987d40df75a5650, type: 3}
   m_PrefabInstance: {fileID: 1536832068}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1565834973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2521444517694832097, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
-  m_PrefabInstance: {fileID: 318467680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1565834974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2441883470568404426, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
   m_PrefabInstance: {fileID: 318467680}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1565834975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565834973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 001a8901665373d4798e44ccdca19fda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enterCellFace: 0
-  exitCellFace: 0
-  isRotationCell: 0
-  isObstacleCell: 0
-  isPortalEnterCell: 0
-  isPortalExitCell: 0
-  isStartBlackHoleCell: 0
-  isBlackHoleCell: 0
-  isJumpCell: 0
-  isStartCell: 0
-  isEndCell: 0
-  initialEnterCellFace: 0
-  initialExitCellFace: 0
-  canDrag: 1
 --- !u!1 &1571664454
 GameObject:
   m_ObjectHideFlags: 0
@@ -9945,11 +9916,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: exitCellFace
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: enterCellFace
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4536243959007950696, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: m_FlipX
@@ -10049,10 +10020,10 @@ MonoBehaviour:
   stars:
   - {fileID: 723262432}
   - {fileID: 407801811}
-  - {fileID: 0}
   - {fileID: 886436180}
-  - {fileID: 0}
   - {fileID: 237087864}
+  - {fileID: 1474446482}
+  - {fileID: 1687519693}
   levelIdx: 7
   changeLevelDelay: 2
   hasAnimation: 1
@@ -15107,7 +15078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: exitCellFace
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 932153964264778037, guid: affd82dc429304478987d40df75a5650, type: 3}
       propertyPath: enterCellFace
