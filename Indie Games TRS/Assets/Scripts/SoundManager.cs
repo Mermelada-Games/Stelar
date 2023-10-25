@@ -39,4 +39,14 @@ public class SoundManager : MonoBehaviour
     {
         return fxSources;
     }
+
+    public void PopFx()
+    {
+        fxSources[0].Play();
+    }
+
+    public void SplatFx()
+    {
+        fxSources[1].Play();
+    }
 }
