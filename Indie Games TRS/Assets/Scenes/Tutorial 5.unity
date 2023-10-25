@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1349000852}
         m_TargetAssemblyTypeName: SpaceShip, Assembly-CSharp
         m_MethodName: startMovement
         m_Mode: 1
@@ -6193,7 +6193,6 @@ GameObject:
   - component: {fileID: 867731809}
   - component: {fileID: 867731808}
   - component: {fileID: 867731807}
-  - component: {fileID: 867731806}
   m_Layer: 5
   m_Name: Return Button
   m_TagString: Untagged
@@ -6222,19 +6221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 80, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &867731806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867731804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27295234f9a6d5c41ae800bfa5eaabb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Galaxy
 --- !u!114 &867731807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6279,10 +6265,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 904946013}
-        m_TargetAssemblyTypeName: GridSystem, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+      - m_Target: {fileID: 85799670}
+        m_TargetAssemblyTypeName: SceneFade, Assembly-CSharp
+        m_MethodName: EndLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6978,6 +6964,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7695807038230851322, guid: e3077411443994148b76c5c7b2558d16, type: 3}
   m_PrefabInstance: {fileID: 1349000850}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349000852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1519246345343281630, guid: e3077411443994148b76c5c7b2558d16, type: 3}
+  m_PrefabInstance: {fileID: 1349000850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80dfb02525273458d04b7d86b9a808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459803185
 GameObject:
   m_ObjectHideFlags: 0

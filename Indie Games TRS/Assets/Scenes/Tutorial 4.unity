@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1374477436}
         m_TargetAssemblyTypeName: SpaceShip, Assembly-CSharp
         m_MethodName: startMovement
         m_Mode: 1
@@ -6397,10 +6397,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 904946013}
-        m_TargetAssemblyTypeName: GridSystem, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+      - m_Target: {fileID: 85799670}
+        m_TargetAssemblyTypeName: SceneFade, Assembly-CSharp
+        m_MethodName: EndLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7177,6 +7177,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7695807038230851322, guid: e3077411443994148b76c5c7b2558d16, type: 3}
   m_PrefabInstance: {fileID: 1374477434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1374477436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1519246345343281630, guid: e3077411443994148b76c5c7b2558d16, type: 3}
+  m_PrefabInstance: {fileID: 1374477434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80dfb02525273458d04b7d86b9a808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1438314610
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6449,10 +6449,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 904946013}
-        m_TargetAssemblyTypeName: GridSystem, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+      - m_Target: {fileID: 85799670}
+        m_TargetAssemblyTypeName: SceneFade, Assembly-CSharp
+        m_MethodName: EndLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
