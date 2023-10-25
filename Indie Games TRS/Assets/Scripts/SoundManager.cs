@@ -49,5 +49,8 @@ public class SoundManager : MonoBehaviour
     {
         fxSources[1].Play();
     }
-
+    public void Glassfx()
+    {
+        fxSources[2].Play();
+    }
 }
