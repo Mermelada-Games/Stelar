@@ -139,7 +139,7 @@ public class SpaceShip : MonoBehaviour
                 }
                 else
                 {
-                    moveDistance = 1.0f;
+                    if (!currentCell.isJumpCell) moveDistance = 1.0f;
 
                     isMoving = true;
 
@@ -160,7 +160,7 @@ public class SpaceShip : MonoBehaviour
                         moveDirection = Vector3.right;
                     }
 
-                    canMove = false;
+                    if (!currentCell.isJumpCell) canMove = false;
                 }
             }
 
