@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &383240179253357587
 SpriteRenderer:
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2083016423, guid: 41aef1a8ab8d7634ab1fb6afd8f54680, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
+  m_Sprite: {fileID: 21300000, guid: 2f46911299595ba46a8b8fd5ba1d6182, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.21}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -145,6 +145,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterCellFace: 1
   exitCellFace: 0
+  isRotationCell: 0
+  isObstacleCell: 0
+  isPortalEnterCell: 0
+  isPortalExitCell: 0
+  isStartBlackHoleCell: 0
+  isBlackHoleCell: 0
+  isJumpCell: 0
   isStartCell: 0
   isEndCell: 0
   initialEnterCellFace: 0
