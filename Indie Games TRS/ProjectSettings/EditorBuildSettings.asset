@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial 5.unity
     guid: 33b04b28443e84a1e8314c2f69518434
+  - enabled: 1
+    path: Assets/Scenes/Toro.unity
+    guid: c5b0e0f2aa9b61848af6aa73f092d369
   m_configObjects: {}

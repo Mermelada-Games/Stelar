@@ -7593,7 +7593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1504767447
 Transform:
   m_ObjectHideFlags: 0
@@ -8303,6 +8303,7 @@ MonoBehaviour:
   - {fileID: 1727965601}
   - {fileID: 66510104}
   - {fileID: 978354222}
+  - {fileID: 1039861851}
   sceneName:
   - Tutorial
   - Tutorial 2
@@ -8310,6 +8311,7 @@ MonoBehaviour:
   - Tutorial 4
   - Tutorial 5
   - Scene
+  - Toro
 --- !u!4 &1702371383
 Transform:
   m_ObjectHideFlags: 0
@@ -8372,8 +8374,9 @@ MonoBehaviour:
   - {fileID: 1603964987}
   - {fileID: 458691766}
   - {fileID: 1723330238}
+  - {fileID: 1504767446}
   levelIdx: 0
-  levelReached: 00000000000000000000000000000000000000000000000000000000
+  levelReached: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1723330238
 GameObject:
   m_ObjectHideFlags: 0
