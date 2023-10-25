@@ -38,7 +38,7 @@ public class Level : MonoBehaviour
 
     private void ChangeLevelWithDelay()
     {
-        PlayerPrefs.SetInt("levelReached", levelIdx);
+        PlayerPrefs.SetInt("levelReached" + levelIdx, levelIdx);
         PlayerPrefs.Save();
         if (hasAnimation) StartCoroutine(lineScript.LineAnimation());
         StartCoroutine(ChangeLevelAfterDelay());

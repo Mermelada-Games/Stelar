@@ -13333,7 +13333,7 @@ MonoBehaviour:
   stars:
   - {fileID: 1056389732}
   levelIdx: 3
-  changeLevelDelay: 4
+  changeLevelDelay: 2
   hasAnimation: 0
   starsCount: 0
   endCell: 0

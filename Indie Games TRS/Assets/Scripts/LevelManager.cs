@@ -7,45 +7,54 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] constellationLight;
     [SerializeField] GameObject[] constellationLine;
-    private int levelReached;
+    [SerializeField] private int levelIdx;
+    [SerializeField] private int[] levelReached;
+    private int[] savedLevelReached;
 
     private void Start()
     {
-        levelReached = PlayerPrefs.GetInt("levelReached", 0);
+        for (int i = 1; i < levelReached.Length; i++)
+        {
+            levelIdx = PlayerPrefs.GetInt("levelReached" + i, 0);
+            if (levelIdx == i)
+            {
+                levelReached[i] = 1;
+            }
+        }
 
-        for (int i = 0; i < constellationLight.Length; i++)
+        for (int i = 1; i < constellationLight.Length + 1; i++)
         {
-            if (i + 1 > levelReached && i < constellationLight.Length)
+            if (levelReached[i] == 1)
             {
-                constellationLight[i].SetActive(false);
-                Debug.Log("false");
+                constellationLight[i - 1].SetActive(true);
             }
             else
             {
-                constellationLight[i].SetActive(true);
-                Debug.Log("true");
+                constellationLight[i - 1].SetActive(false);
             }
         }
-        for (int i = 0; i < constellationLine.Length; i++)
+        for (int i = 2; i < constellationLine.Length + 2; i++)
         {
-            if (i + 2 >levelReached && i < constellationLine.Length)
+            if (levelReached[i] == 1)
             {
-                constellationLine[i].SetActive(false);
+                constellationLine[i - 2].SetActive(true);
             }
             else
             {
-                constellationLine[i].SetActive(true);
+                constellationLine[i - 2].SetActive(false);
             }
         }
-        Debug.Log(levelReached);
     }
 
     public void RestartProgress()
     {
-        PlayerPrefs.SetInt("levelReached", 0);
-        PlayerPrefs.Save();
 
-        levelReached = 0;
+        for (int i = 0; i < levelReached.Length; i++)
+        {
+            PlayerPrefs.SetInt("levelReached" + i, 0);
+            PlayerPrefs.Save();
+            levelReached[i] = 0;
+        }
         for (int i = 0; i < constellationLight.Length; i++)
         {
             constellationLight[i].SetActive(false);
@@ -54,6 +63,5 @@ public class LevelManager : MonoBehaviour
         {
             constellationLine[i].SetActive(false);
         }
-        Debug.Log(levelReached);
     }
 }

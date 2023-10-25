@@ -7132,8 +7132,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.41185, y: 0.5079, z: 0}
-    m_Extent: {x: 0.53765, y: 0.63170004, z: 0}
+    m_Center: {x: 0.4092, y: 0.50515, z: 0}
+    m_Extent: {x: 0.5402, y: 0.62585, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8372,6 +8372,8 @@ MonoBehaviour:
   - {fileID: 1603964987}
   - {fileID: 458691766}
   - {fileID: 1723330238}
+  levelIdx: 0
+  levelReached: 00000000000000000000000000000000000000000000000000000000
 --- !u!1 &1723330238
 GameObject:
   m_ObjectHideFlags: 0
