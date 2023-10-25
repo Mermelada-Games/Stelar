@@ -9,6 +9,7 @@ public class SpaceShip : MonoBehaviour
     [SerializeField] private float moveDistance = 2.5f;
     [SerializeField] private float rotationSpeed = 90.0f;
     [SerializeField] private int maxMovements;
+    [SerializeField] private BlackHole blackHole;
 
     private Vector3 initialPosition;
     private Vector3 firstPosition;
@@ -23,6 +24,7 @@ public class SpaceShip : MonoBehaviour
     private bool isMoving = false;
     private bool canMove = false;
     private bool isWaiting = false;
+    private bool blackHoleActivated = false;
 
     private void Start()
     {
@@ -95,6 +97,8 @@ public class SpaceShip : MonoBehaviour
             if (currentCell.isBlackHoleCell)
             {
                 //Debug.Log("BlackHoleCell");
+                blackHole.rotationSpeed = 100;
+                blackHoleActivated = true;
                 StartCoroutine(MoveToBlackHole());
             }
 
@@ -226,6 +230,7 @@ public class SpaceShip : MonoBehaviour
         canMove = false;
         isWaiting = true;
         transform.position = firstPosition;
+        if (blackHoleActivated) blackHole.rotationSpeed = 20;
         gridSystem.RestartGame();
         currentCell = gridSystem.GetCellAtPosition(transform.position);
     }

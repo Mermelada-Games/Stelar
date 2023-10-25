@@ -6,6 +6,7 @@ public class Galaxy : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private GameObject[] constellation;
+    
     [SerializeField] private string[] sceneName;
     private SceneFade sceneFade;
     private CameraController cameraController;
