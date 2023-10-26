@@ -132,6 +132,7 @@ public class LevelManager : MonoBehaviour
         {
             constellationLine[i].SetActive(false);
         }
+        allLevelsReached = false;
         credits.SetActive(false);
     }
 }
