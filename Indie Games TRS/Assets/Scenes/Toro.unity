@@ -692,6 +692,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5966,6 +5974,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cell
       objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6450,11 +6466,13 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Positions:
-  - {x: 1.610637, y: 0.3655882, z: -8.556762}
-  - {x: -3.4578853, y: 0.3655882, z: -8.556762}
-  - {x: -3.457885, y: 5.204292, z: -8.556762}
-  - {x: -10.918646, y: 2.7638652, z: -8.556762}
-  - {x: -8.451315, y: 7.877199, z: -8.556762}
+  - {x: 1.5410352, y: 5.1189632, z: -5}
+  - {x: 1.5734525, y: 0.28878164, z: -5}
+  - {x: -3.4836512, y: 0.35361624, z: -5}
+  - {x: -3.4836512, y: 5.1189632, z: -5}
+  - {x: -10.9720545, y: 2.7200809, z: -5}
+  - {x: -8.443502, y: 7.6799326, z: -5}
+  - {x: 1.5410352, y: 5.1189632, z: -5}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -8440,6 +8458,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8510,6 +8536,14 @@ PrefabInstance:
     - target: {fileID: 2521444517694832097, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
       propertyPath: m_Name
       value: Planet (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14512,6 +14546,14 @@ PrefabInstance:
     - target: {fileID: 2521444517694832097, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
       propertyPath: m_TagString
       value: Cell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
