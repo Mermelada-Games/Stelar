@@ -5834,7 +5834,7 @@ Camera:
   far clip plane: 1000
   field of view: 158.3
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 6.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6412,8 +6412,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.40065, y: 3.79025, z: 0}
-    m_Extent: {x: 2.7810502, y: 4.08735, z: 0}
+    m_Center: {x: -2.40275, y: 3.7944, z: 0}
+    m_Extent: {x: 2.7796502, y: 4.0884, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -6787,7 +6787,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 158.3
-    OrthographicSize: 6
+    OrthographicSize: 6.4
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -6918,7 +6918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556071825805768814, guid: dbcf662f2f5cf42e78edb75a9683dfc6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2556071825805768814, guid: dbcf662f2f5cf42e78edb75a9683dfc6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7835,6 +7835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dreta (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: isEndCell
       value: 1
@@ -7845,11 +7849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: exitCellFace
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: enterCellFace
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8990675811717314643, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_RootOrder
@@ -7857,7 +7861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8990675811717314643, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8990675811717314643, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_LocalPosition.y
