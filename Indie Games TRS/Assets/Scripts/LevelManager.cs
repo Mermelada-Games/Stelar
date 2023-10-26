@@ -7,16 +7,12 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] constellationLight;
     [SerializeField] GameObject[] constellationLine;
-    [SerializeField] private GameObject credits;
     [SerializeField] private GameObject[] stars;
     [SerializeField] private int levelIdx;
     [SerializeField] private int[] levelReached;
-    private int[] savedLevelReached;
-    bool allLevelsReached = false;
 
     private void Start()
     {
-        allLevelsReached = false;
         for (int i = 1; i < levelReached.Length; i++)
         {
             levelIdx = PlayerPrefs.GetInt("levelReached" + i, 0);
@@ -24,21 +20,6 @@ public class LevelManager : MonoBehaviour
             {
                 levelReached[i] = 1;
             }
-        }
-
-        for (int i = 1; i < levelReached.Length; i++)
-        {
-            if (levelReached[i] == 1) allLevelsReached = true;
-            else if (levelReached[i] != 1)
-            {
-                allLevelsReached = false;
-                break;
-            }
-        }
-
-        if (allLevelsReached)
-        {
-            credits.SetActive(true);
         }
 
         for (int i = 0; i < stars.Length; i++)
@@ -92,14 +73,6 @@ public class LevelManager : MonoBehaviour
                 constellationLine[i - 2].SetActive(false);
             }
         }
-
-        for (int i = 0; i < levelReached.Length; i++)
-        {
-            if (levelReached[i] == 1)
-            {
-
-            }
-        }
     }
 
     private void Update()
@@ -133,7 +106,5 @@ public class LevelManager : MonoBehaviour
         {
             constellationLine[i].SetActive(false);
         }
-        allLevelsReached = false;
-        credits.SetActive(false);
     }
 }

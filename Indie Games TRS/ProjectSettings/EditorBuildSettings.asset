@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rotador.unity
     guid: 4a46bf4ac0f485844b790ccac4df5963
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 2b88d1a6686ee8140b23d662ecda2552
   m_configObjects: {}
