@@ -9926,7 +9926,7 @@ MonoBehaviour:
   - {fileID: 237087864}
   - {fileID: 1474446482}
   - {fileID: 1687519693}
-  levelIdx: 7
+  levelIdx: 8
   changeLevelDelay: 2
   hasAnimation: 1
   starsCount: 0

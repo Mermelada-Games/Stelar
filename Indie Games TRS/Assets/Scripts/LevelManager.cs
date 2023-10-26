@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] constellationLight;
     [SerializeField] GameObject[] constellationLine;
+    [SerializeField] private GameObject[] stars;
     [SerializeField] private int levelIdx;
     [SerializeField] private int[] levelReached;
     private int[] savedLevelReached;
@@ -19,6 +20,18 @@ public class LevelManager : MonoBehaviour
             if (levelIdx == i)
             {
                 levelReached[i] = 1;
+            }
+        }
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            if (levelReached[1] == 1)
+            {
+                stars[i].SetActive(true);
+            }
+            else
+            {
+                stars[i].SetActive(false);
             }
         }
 
@@ -46,6 +59,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            RestartProgress();
+        }
+    }
+
     public void RestartProgress()
     {
 
@@ -54,6 +75,12 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("levelReached" + i, 0);
             PlayerPrefs.Save();
             levelReached[i] = 0;
+        }
+        for (int i = 0; i < stars.Length; i++)
+        {
+            {
+                stars[i].SetActive(false);
+            }
         }
         for (int i = 0; i < constellationLight.Length; i++)
         {
