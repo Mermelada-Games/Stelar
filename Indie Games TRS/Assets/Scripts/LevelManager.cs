@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        allLevelsReached = false;
         for (int i = 1; i < levelReached.Length; i++)
         {
             levelIdx = PlayerPrefs.GetInt("levelReached" + i, 0);
