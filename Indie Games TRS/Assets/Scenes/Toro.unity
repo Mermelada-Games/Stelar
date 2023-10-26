@@ -5909,6 +5909,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 5378734020309449812, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977988360534169674, guid: 4923f9084e2a6f447856656de666ad79, type: 3}
+      propertyPath: isObstacleCell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6274,7 +6282,7 @@ MonoBehaviour:
   enterCellFace: 0
   exitCellFace: 0
   isRotationCell: 0
-  isObstacleCell: 0
+  isObstacleCell: 1
   isPortalEnterCell: 0
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
@@ -6639,7 +6647,7 @@ MonoBehaviour:
   enterCellFace: 0
   exitCellFace: 0
   isRotationCell: 0
-  isObstacleCell: 0
+  isObstacleCell: 1
   isPortalEnterCell: 0
   isPortalExitCell: 0
   isStartBlackHoleCell: 0
