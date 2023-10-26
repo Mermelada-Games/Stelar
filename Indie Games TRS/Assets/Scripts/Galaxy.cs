@@ -30,18 +30,22 @@ public class Galaxy : MonoBehaviour
                 {
                     cameraController.targetTransform = hit.collider.transform;
                     cameraController.selectLevel = true;
-                }
-                else
-                {
+
                     for (int i = 0; i < constellation.Length; i++)
                     {
                         if (hit.collider == constellation[i].GetComponent<Collider2D>())
                         {
-                            sceneFade.EndLevel(sceneName[i]);
+                            StartCoroutine(EnterLevel(i));
                         }
                     }
                 }
             }
         }
+    }
+
+    private IEnumerator EnterLevel(int i)
+    {
+        yield return new WaitForSeconds(2.0f);
+        sceneFade.EndLevel(sceneName[i]);
     }
 }
