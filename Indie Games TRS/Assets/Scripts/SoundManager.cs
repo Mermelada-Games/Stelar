@@ -63,4 +63,20 @@ public class SoundManager : MonoBehaviour
     {
         fxSources[4].Play();
     }
+    
+    public void PlayMenu()
+    {
+        musicSources[0].Play();
+    }
+
+    public void PlayMusic()
+    {
+        musicSources[1].Play();
+    }
+
+    public void PauseMusic()
+    {
+        musicSources[0].Pause();
+        musicSources[1].Pause();
+    }
 }

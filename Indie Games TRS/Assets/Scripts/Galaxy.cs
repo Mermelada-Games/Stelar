@@ -10,11 +10,15 @@ public class Galaxy : MonoBehaviour
     [SerializeField] private string[] sceneName;
     private SceneFade sceneFade;
     private CameraController cameraController;
+    private SoundManager soundManager;
 
     private void Start()
     {
         sceneFade = FindObjectOfType<SceneFade>();
         cameraController = FindObjectOfType<CameraController>();
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+        soundManager.PauseMusic();
+        soundManager.PlayMusic();
     }
 
     private void Update()
