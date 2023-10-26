@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
                  stars[3].SetActive(true);
             }
 
-            if (levelReached[5] == 1 && i > 4)
+            if (levelReached[5] == 1 && i > 3)
             {
                 stars[i].SetActive(true);
             }
