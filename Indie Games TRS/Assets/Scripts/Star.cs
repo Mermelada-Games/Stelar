@@ -5,11 +5,15 @@ using UnityEngine;
 public class Star : MonoBehaviour
 {
     public UnityEngine.Rendering.Universal.Light2D light2D;
+    private SoundManager soundManager;
 
     private void Start()
     {
         light2D = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         RestartStar();
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+        AudioSource[] musicSources = soundManager.GetMusicSources();
+        AudioSource[] fxSources = soundManager.GetFxSources();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -17,6 +21,7 @@ public class Star : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Level level = FindObjectOfType<Level>();
+            soundManager.StarFx();
             level.starsCount++;
             StartCoroutine(EnableLight());
         }

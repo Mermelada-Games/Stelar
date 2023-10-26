@@ -53,4 +53,14 @@ public class SoundManager : MonoBehaviour
     {
         fxSources[2].Play();
     }
+
+    public void WinFx()
+    {
+        fxSources[3].Play();
+    }
+
+    public void StarFx()
+    {
+        fxSources[4].Play();
+    }
 }

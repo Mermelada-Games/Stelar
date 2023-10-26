@@ -102,7 +102,7 @@ public class SpaceShip : MonoBehaviour
                 StartCoroutine(MoveToBlackHole());
             }
 
-            if (currentCell.isJumpCell)
+            if (currentCell.isJumpCell && nextCell.isObstacleCell)
             {
                 //Debug.Log("JumpCell");
                 moveDistance = 5.0f;

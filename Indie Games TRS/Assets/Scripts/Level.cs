@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     [SerializeField] private int levelIdx = 0;
     [SerializeField] private float changeLevelDelay =  5f;
     [SerializeField] private bool hasAnimation = true;
+    private SoundManager soundManager;
     public int starsCount = 0;
     private bool starsCollected = false;
     private bool levelCompleted = false;
@@ -20,6 +21,9 @@ public class Level : MonoBehaviour
     private void Start()
     {
         sceneFade = FindObjectOfType<SceneFade>();
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+        AudioSource[] musicSources = soundManager.GetMusicSources();
+        AudioSource[] fxSources = soundManager.GetFxSources();
     }
     
     private void Update()
@@ -40,6 +44,7 @@ public class Level : MonoBehaviour
     {
         PlayerPrefs.SetInt("levelReached" + levelIdx, levelIdx);
         PlayerPrefs.Save();
+        soundManager.WinFx();
         if (hasAnimation) StartCoroutine(lineScript.LineAnimation());
         StartCoroutine(ChangeLevelAfterDelay());
     }
