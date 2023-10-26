@@ -27,6 +27,23 @@ public class LevelManager : MonoBehaviour
         {
             if (levelReached[1] == 1)
             {
+                stars[0].SetActive(true);
+            }
+            if (levelReached[2] == 1)
+            {
+                stars[1].SetActive(true);
+            }
+            if (levelReached[3] == 1)
+            {
+                stars[2].SetActive(true);
+            }
+            if (levelReached[4] == 1)
+            {
+                 stars[3].SetActive(true);
+            }
+
+            if (levelReached[5] == 1 && i > 4)
+            {
                 stars[i].SetActive(true);
             }
             else

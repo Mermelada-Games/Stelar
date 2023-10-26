@@ -16796,6 +16796,14 @@ PrefabInstance:
       propertyPath: isEndCell
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3188617408909012511, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: exitCellFace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459126686621102302, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20b6dc88de19ad747a7af2baf9d9e164, type: 3}
     - target: {fileID: 6677211582031137506, guid: 1e34b2f682d4640479cc78e181157134, type: 3}
       propertyPath: m_Name
       value: Esquerra
@@ -18409,7 +18417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3317446356360519672, guid: 9d37a1fbcc5bb46d284f5cdf68bbcd54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3317446356360519672, guid: 9d37a1fbcc5bb46d284f5cdf68bbcd54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23376,6 +23384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dreta
       objectReference: {fileID: 0}
+    - target: {fileID: 5050074252325911134, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e6bf631cc07ac40cd84863a63fe8fb62, type: 3}
     - target: {fileID: 6021497954335000245, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: isStartCell
       value: 0
@@ -23394,7 +23406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8990675811717314643, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8990675811717314643, guid: 7af3171d21c2641d0adf33c07710ded1, type: 3}
       propertyPath: m_LocalPosition.z
