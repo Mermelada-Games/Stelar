@@ -686,6 +686,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 904946012}
     m_Modifications:
+    - target: {fileID: 286621819804029458, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
+      propertyPath: isEndCell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 286621819804029458, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
+      propertyPath: isStartCell
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1102468973197889682, guid: 7dc3320a8d25e49d6a277868872283be, type: 3}
       propertyPath: m_RootOrder
       value: -1
